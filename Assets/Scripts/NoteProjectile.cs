@@ -34,4 +34,13 @@ public class NoteProjectile : MonoBehaviour
         xPosition += (midiValue - 21) * (20.8f / 88);
         transform.position = new Vector3(xPosition, transform.position.y, 0);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            Debug.Log("Hit!");
+            Destroy(gameObject);
+        }
+    }
 }
