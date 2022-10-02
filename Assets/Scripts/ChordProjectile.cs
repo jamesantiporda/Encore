@@ -34,7 +34,7 @@ public class ChordProjectile : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Hit!");
+            //Debug.Log("Hit!");
             Destroy(gameObject);
         }
     }

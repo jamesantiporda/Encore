@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2076007791, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
+  m_Name: malenia
+  m_EditorClassIdentifier: 
+  mSourceClip: {fileID: 8300000, guid: 93ecfd7214b435149956cd50017f3880, type: 3}
+  mAudioFilePath: 
+  mSampleRate: 44100
+  mIgnoreLatencyOffset: 0
+  mTempoSections:
+  - sectionName: Section
+    startSample: 0
+    samplesPerBeat: 20353.847850000002
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  mTracks:
+  - {fileID: 11400000, guid: 737ab61143ea6804781d96f52ed3363a, type: 2}
+  - {fileID: 11400000, guid: 2ba3b5aefe730c2449766fbd52c2afda, type: 2}
+  - {fileID: 11400000, guid: 6c0ba1ab42719bd4fbfa20d058b7dfc1, type: 2}
+  - {fileID: 11400000, guid: a26a6cb5c94501b469c25ba3e1f96e7a, type: 2}

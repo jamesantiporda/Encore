@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    private Gun gun;
 
     float moveSpeed = 10;
 
-    bool moveUp, moveDown, moveLeft, moveRight;
+    bool moveUp, moveDown, moveLeft, moveRight, shoot, auto;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        gun = transform.GetComponentInChildren<Gun>();
+        gun.isActive = true;
     }
 
     // Update is called once per frame
@@ -22,6 +24,16 @@ public class PlayerMove : MonoBehaviour
         moveDown = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
         moveLeft = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A);
         moveRight = Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
+
+        auto = Input.GetKey(KeyCode.C);
+        gun.autoShoot = auto;
+
+        shoot = Input.GetKeyDown(KeyCode.Z);
+
+        if (shoot && !auto)
+        {
+            gun.Shoot();
+        }
     }
 
     private void FixedUpdate()

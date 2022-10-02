@@ -6,11 +6,13 @@ using SonicBloom.Koreo;
 public class ChordManager : MonoBehaviour
 {
     public GameObject chord;
+    private BossBehavior boss;
 
     // Start is called before the first frame update
     void Start()
     {
-        Koreographer.Instance.RegisterForEvents("Guitar", FireChord);
+        boss = GetComponent<BossBehavior>();
+        Koreographer.Instance.RegisterForEvents("Chords", FireChord);
     }
 
     // Update is called once per frame
@@ -21,7 +23,9 @@ public class ChordManager : MonoBehaviour
 
     void FireChord(KoreographyEvent koreoEvent)
     {
-        Debug.Log(koreoEvent.GetIntValue());
-        Instantiate(chord, transform.position, Quaternion.identity);
+        if (boss.ReturnCurrentAttack() == "Chord")
+        {
+            Instantiate(chord, transform.position, Quaternion.identity);
+        }
     }
 }
