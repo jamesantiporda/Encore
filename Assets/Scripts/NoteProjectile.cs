@@ -11,9 +11,14 @@ public class NoteProjectile : MonoBehaviour
     private float xPosition;
     private Vector3 initialPosition;
     private Vector3 finalPosition;
+    private PlayerMove target;
+
+    [SerializeField]
+    int damage = 3;
 
     void Start()
     {
+        target = GameObject.FindObjectOfType<PlayerMove>();
         initialPosition = new Vector3(transform.position.x, initialYPosition, 0);
         finalPosition = new Vector3(transform.position.x, finalYPosition, 0);
         transform.position = initialPosition;
@@ -39,6 +44,7 @@ public class NoteProjectile : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            target.DecreaseHealth(damage);
             //Debug.Log("Hit!");
             Destroy(gameObject);
         }

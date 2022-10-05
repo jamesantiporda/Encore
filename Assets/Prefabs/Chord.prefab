@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8190050839808975542}
   m_Layer: 0
   m_Name: Chord
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,3 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
+  damage: 10

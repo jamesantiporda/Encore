@@ -10,10 +10,15 @@ public class FClefProjectile : MonoBehaviour
     private Vector3 initialPosition;
     private Vector3 finalPosition;
     private float rotationSpeed = 360f;
+    private PlayerMove target;
+
+    [SerializeField]
+    int damage;
 
     // Start is called before the first frame update
     void Start()
     {
+        target = GameObject.FindObjectOfType<PlayerMove>();
         finalXPosition = -12f;
         //initialPosition = new Vector3(initialXPosition, transform.position.y, 0);
         finalPosition = new Vector3(finalXPosition, transform.position.y, 0);
@@ -35,6 +40,7 @@ public class FClefProjectile : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            target.DecreaseHealth(damage);
             //Debug.Log("Hit!");
             Destroy(gameObject);
         }

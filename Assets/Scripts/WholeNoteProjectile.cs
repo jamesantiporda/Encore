@@ -11,6 +11,9 @@ public class WholeNoteProjectile : MonoBehaviour
     PlayerMove target;
     Vector2 moveDirection;
 
+    [SerializeField]
+    int damage = 3;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,7 @@ public class WholeNoteProjectile : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            target.DecreaseHealth(damage);
             //Debug.Log("Hit!");
             Destroy(gameObject);
         }

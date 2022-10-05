@@ -10,6 +10,15 @@ public class NoteBombProjectile : MonoBehaviour
     
     Vector3 startPoint;
     Vector3 moveDirection;
+
+    [SerializeField]
+    int numberOfProjectiles;
+
+    [SerializeField]
+    GameObject projectile;
+
+    [SerializeField]
+    float delay;
     
 
     // Start is called before the first frame update
@@ -24,30 +33,43 @@ public class NoteBombProjectile : MonoBehaviour
         transform.position = screenPosition;
         startPoint = screenPosition;
 
-        float angleStep = 360f / transform.childCount;
-        float angle = 0f;
-        
-        //yield WaitForSeconds(3);
-        
-        foreach (Transform child in transform)
-        {
-            Debug.Log("HAAAI");
-            rb = child.GetComponent<Rigidbody2D>();
-            float projectileDirXposition = startPoint.x + Mathf.Sin ((angle * Mathf.PI) / 180) * 5f;
-            float projectileDirYposition = startPoint.y + Mathf.Cos ((angle * Mathf.PI) / 180) * 5f;
-
-            Vector3 projectileVector = new Vector3 (projectileDirXposition, projectileDirYposition);
-            Vector3 moveDirection = (projectileVector - startPoint).normalized * moveSpeed;
-            rb.velocity = new Vector2(moveDirection.x,moveDirection.y);
-
-            angle += angleStep;
-            Destroy(gameObject, 15f);
-        }
+        StartCoroutine(waiter());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(delay);
+        SpawnProjectiles(numberOfProjectiles);
+        Destroy(gameObject);
+
+    }
+
+    void SpawnProjectiles(int numberOfProjectiles)
+    {
+        float angleStep = 360f / numberOfProjectiles;
+        float angle = 0f;
+
+        //yield WaitForSeconds(3);
+
+        for (int i = 0; i < numberOfProjectiles; i++)
+        {
+            Debug.Log("HAAAI");
+            float projectileDirXposition = startPoint.x + Mathf.Sin((angle * Mathf.PI) / 180) * 5f;
+            float projectileDirYposition = startPoint.y + Mathf.Cos((angle * Mathf.PI) / 180) * 5f;
+
+            Vector3 projectileVector = new Vector3(projectileDirXposition, projectileDirYposition);
+            Vector3 moveDirection = (projectileVector - startPoint).normalized * moveSpeed;
+
+            var proj = Instantiate(projectile, startPoint, Quaternion.identity);
+            proj.GetComponent<Rigidbody2D>().velocity = new Vector3(moveDirection.x, moveDirection.y, moveDirection.z);
+
+            angle += angleStep;
+        }
     }
 }

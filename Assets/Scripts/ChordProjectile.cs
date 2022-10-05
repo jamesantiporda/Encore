@@ -6,6 +6,9 @@ public class ChordProjectile : MonoBehaviour
 {
     public float moveSpeed = 7f;
 
+    [SerializeField]
+    int damage = 10;
+
     Rigidbody2D rb;
 
     PlayerMove target;
@@ -34,6 +37,7 @@ public class ChordProjectile : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            target.DecreaseHealth(damage);
             //Debug.Log("Hit!");
             Destroy(gameObject);
         }

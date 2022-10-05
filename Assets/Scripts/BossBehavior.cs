@@ -13,9 +13,10 @@ public class BossBehavior : MonoBehaviour
     private float startTime, elapsedTime, attackTimer, previousAttackTime, previousSegmentTime;
     private int currentSegment;
     private string[][] segmentAttacks;
-    private string[] attacks = {"DrumCymbals", "WholeNote", "NoteRain", "Chord", "NoteDrizzle", "Lunge", "FClef", "NoteBomb", "DoubleStaff", "StaffBlast"};
+    private string[] attacks = {"Drums", "WholeNote", "NoteRain", "Chord", "NoteDrizzle", "Lunge", "FClef", "NoteBomb", "DoubleStaff", "StaffBlast"};
     private string currentAttack;
     private NoteDrizzleBehavior noteDrizzle;
+    private DrumManager drums;
 
     private int randomizer;
 
@@ -23,7 +24,7 @@ public class BossBehavior : MonoBehaviour
     void Start()
     {
         noteDrizzle = GameObject.FindObjectOfType<NoteDrizzleBehavior>();
-
+        drums = GetComponent<DrumManager>();
         randomizer = 0;
         currentSegment = 0;
         startTime = Time.time;
@@ -118,7 +119,8 @@ public class BossBehavior : MonoBehaviour
 
     string AttackPick()
     {
-        randomizer = Random.Range(1, 2);
+        drums.ResetCount();
+        randomizer = Random.Range(0, 2);
         attackTimer = 0f;
         previousAttackTime = Time.time;
         int attackPicked = Random.Range(0, segmentAttacks[currentSegment].Length);

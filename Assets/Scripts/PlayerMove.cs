@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerMove : MonoBehaviour
 {
     private Gun gun;
 
+    private int health;
+
     float moveSpeed = 10;
 
     bool moveUp, moveDown, moveLeft, moveRight, shoot, auto;
 
+
     // Start is called before the first frame update
     void Start()
     {
+        health = 100;
         gun = transform.GetComponentInChildren<Gun>();
         gun.isActive = true;
     }
@@ -20,6 +25,11 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(health <= 0)
+        {
+            Time.timeScale = 0;
+        }
+
         moveUp = Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W);
         moveDown = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
         moveLeft = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A);
@@ -91,5 +101,23 @@ public class PlayerMove : MonoBehaviour
         */
 
         transform.position = pos;
+    }
+
+    public void DecreaseHealth(int damage)
+    {
+        health -= damage;
+    }
+
+    public void IncreaseHealth(int heal)
+    {
+        if (health < 100)
+        {
+            health += heal;
+        }
+    }
+
+    public int ReturnHealth()
+    {
+        return health;
     }
 }

@@ -11,6 +11,9 @@ public class DrumProjectile : MonoBehaviour
     PlayerMove target;
     Vector2 moveDirection;
 
+    [SerializeField]
+    int damage = 5;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +24,7 @@ public class DrumProjectile : MonoBehaviour
         float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
-        Destroy(gameObject, 20f);
+        Destroy(gameObject, 5f);
     }
 
     // Update is called once per frame
@@ -34,6 +37,7 @@ public class DrumProjectile : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            target.DecreaseHealth(damage);
             //Debug.Log("Hit!");
             Destroy(gameObject);
         }

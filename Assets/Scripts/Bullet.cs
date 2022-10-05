@@ -7,11 +7,14 @@ public class Bullet : MonoBehaviour
     public Vector3 direction = new Vector3(1, 0, 0);
     public float speed = 2;
 
+    PlayerMove player;
+
     private Vector3 velocity;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindObjectOfType<PlayerMove>();
         Destroy(gameObject, 3);
         DontDestroyOnLoad(gameObject);
     }
@@ -38,8 +41,14 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "SmallDestroyable")
+        if (collision.tag == "SmallDestroyable" || collision.tag == "Attack")
         {
+            Destroy(gameObject);
+        }
+
+        if (collision.tag == "Boss")
+        {
+            player.IncreaseHealth(1);
             Destroy(gameObject);
         }
     }
