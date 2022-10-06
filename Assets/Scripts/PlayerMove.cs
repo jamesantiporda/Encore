@@ -13,7 +13,6 @@ public class PlayerMove : MonoBehaviour
 
     bool moveUp, moveDown, moveLeft, moveRight, shoot, auto;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +41,7 @@ public class PlayerMove : MonoBehaviour
 
         if (shoot && !auto)
         {
-            gun.Shoot();
+            gun.ShootNormal();
         }
     }
 

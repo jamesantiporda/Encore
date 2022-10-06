@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NoteBombProjectile : MonoBehaviour
 {
-    public float moveSpeed = 400f;
+    public float moveSpeed = 800f;
 
     Rigidbody2D rb;
     
