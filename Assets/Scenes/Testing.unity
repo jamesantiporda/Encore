@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593c63d0cd3ae474b805f9f1d9508b1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  features: {fileID: 4900000, guid: de5734ef52cd36e44bb87dd5f06f7621, type: 3}
+  features: {fileID: 4900000, guid: b0fa501ebb3824f4eb0bf1c09c0c8b82, type: 3}
 --- !u!4 &24467578
 Transform:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoPlayOnAwake: 1
-  koreography: {fileID: 11400000, guid: 8f630f2473d13a041898484751cdc0c8, type: 2}
+  koreography: {fileID: 11400000, guid: 73b3405cc05516d4db674edea98d1476, type: 2}
   targetKoreographer: {fileID: 0}
 --- !u!82 &58991440
 AudioSource:
@@ -654,6 +654,7 @@ GameObject:
   - component: {fileID: 470674828}
   - component: {fileID: 470674829}
   - component: {fileID: 470674830}
+  - component: {fileID: 470674833}
   - component: {fileID: 470674831}
   - component: {fileID: 470674832}
   m_Layer: 0
@@ -881,6 +882,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &470674833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470674820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c02561d7080b4892db63c4ca4afaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fclef: {fileID: 2115522912742617031, guid: 59aa71d1ae617914281e495473002b7e, type: 3}
 --- !u!1 &498072748
 GameObject:
   m_ObjectHideFlags: 0

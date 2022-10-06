@@ -17,7 +17,7 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = 100;
+        health = 50;
         gun = transform.GetComponentInChildren<Gun>();
         gun.isActive = true;
     }
@@ -110,7 +110,7 @@ public class PlayerMove : MonoBehaviour
 
     public void IncreaseHealth(int heal)
     {
-        if (health < 100)
+        if (health < 50)
         {
             health += heal;
         }

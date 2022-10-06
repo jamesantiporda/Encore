@@ -1,0 +1,9 @@
+Number_of_Pitches,Number_of_Pitch_Classes,Number_of_Common_Pitches,Number_of_Common_Pitch_Classes,Range,Repeated_Notes,Chromatic_Motion,Stepwise_Motion,Average_Number_of_Simultaneous_Pitch_Classes,Average_Number_of_Simultaneous_Pitches,Vertical_Minor_Third_Prevalence,Vertical_Major_Third_Prevalence,Chord_Duration,Initial_Tempo,Mean_Tempo,Tempo_Variability,Duration_in_Seconds,Note_Density,Note_Density_Variability,Average_Time_Between_Attacks,Average_Variability_of_Time_Between_Attacks_for_Each_Voice,Minimum_Note_Duration,Maximum_Note_Duration,Average_Note_Duration,Amount_of_Staccato,Unpitched_Percussion_Instrument_Prevalence,Acoustic_Guitar_Prevalence,Electric_Guitar_Prevalence,Violin_Prevalence,Dynamic_Range,Average_Note_to_Note_Change_in_Dynamics
+15,6,5,1,67,0,0,0,3.234,4.433,0.9602,0.6333,0.4825,60,60,0,15,2.4,0.4171,0.4851,0.7527,0.8979,3.798,1.845,0,0,0,0,0,12,0.8889
+34,7,2,1,67,0,0.1698,0.6038,2.189,2.479,0.2988,0.02408,0.07353,60,60,0,4.948,11.52,0,0.09896,0.03581,0.09167,0.9979,0.2107,0.1754,0,0,0,0,32,1.263
+34,9,4,2,65,0.009346,0.004673,0.004673,2.475,4.688,0.4739,0.316,0.2074,75,75,0,51.19,9.221,1.955,0.276,0.2148,0.125,2.278,0.5002,0,0,0,0,0,26,0.1928
+16,8,4,1,47,0,0,0.1014,2.144,4.126,0.09049,0.1206,0.2198,75,75,0,12.8,10.63,1.085,0.2658,0.1232,0.04833,1.598,0.3806,0.02941,0,0,0,0,38,1.728
+20,7,4,2,37,0.07692,0.1077,0.2615,2.886,4.339,0.6222,0.4369,0.1248,75,75,0,6.392,12.2,1.901,0.1325,2.81E-17,0.125,1.598,0.3529,0,0,0,0,0,12,0.7692
+11,5,4,2,41,0,0,0,2.667,5,0.6667,0.6667,1.897,75,75,0,4.718,3.179,0,1.599,0,1.518,1.518,1.518,0,0,0,0,0,0,0
+21,7,2,2,49,0,0.08271,0.09774,1.751,2.893,0.1444,0.1401,0.09124,75,75,0,12.79,13.52,0.6371,0.1325,2.79E-17,0.125,0.3783,0.2086,0,0,0,0,0,12,0.2775
+2,1,2,1,12,0,0,0,1,2,0,0,11.4,75,75,0,9.118,0.2193,0.0605,0,0,9.118,9.118,9.118,0,0,0,0,0,0,0
