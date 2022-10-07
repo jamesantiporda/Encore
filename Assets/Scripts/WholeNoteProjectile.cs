@@ -21,8 +21,6 @@ public class WholeNoteProjectile : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindObjectOfType<PlayerMove>();
         moveDirection = (target.transform.position - transform.position).normalized * moveSpeed;
-        float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.left);
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
         Destroy(gameObject, 3f);
     }

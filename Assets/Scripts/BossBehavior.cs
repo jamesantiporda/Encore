@@ -207,7 +207,7 @@ public class BossBehavior : MonoBehaviour
         float violinPrevalence = reader.GetValue("Violin_Prevalence", segment);
         float chromatic = reader.GetValue("Chromatic_Motion", segment);
         float stepwise = reader.GetValue("Stepwise_Motion", segment);
-        if (violinPrevalence > 0 || chromatic >= 0.40 || (stepwise >= 0.40 && range >= 30))
+        if (violinPrevalence > 0 || chromatic >= 0.40 || stepwise >= 0.40) // && range >= 30))
         {
             if (s == "")
                 s += "DoubleStaff";
@@ -215,7 +215,7 @@ public class BossBehavior : MonoBehaviour
                 s += ",DoubleStaff";
         }
 
-        if (simultaneousPitches >= 5 && chordDuration >= 1)
+        if ((majorMinorThirds >= 0.2 || simultaneousPitches >= 5) && chordDuration >= 1)
         {
             if (s == "")
                 s += "StaffBlast";

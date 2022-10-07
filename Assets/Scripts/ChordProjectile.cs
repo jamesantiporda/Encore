@@ -45,6 +45,7 @@ public class ChordProjectile : MonoBehaviour
         if (collision.tag == "Parry")
         {
             //Debug.Log("Parried!");
+            target.IncreaseHealth(5);
             Destroy(gameObject);
         }
     }

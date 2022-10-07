@@ -9,7 +9,7 @@ public class Gun : MonoBehaviour
     private Vector3 direction;
 
     public bool autoShoot = false;
-    public float shootIntervalSeconds = 0.5f;
+    public float shootIntervalSeconds = 0.2f;
     public float shootDelaySeconds = 0.0f;
     float shootTimer = 0f;
     float delayTimer = 0f;
@@ -41,7 +41,7 @@ public class Gun : MonoBehaviour
             {
                 if (shootTimer >= shootIntervalSeconds)
                 {
-                    Shoot();
+                    ShootNormal();
                     shootTimer = 0;
                 }
                 else

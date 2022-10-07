@@ -19,11 +19,14 @@ public class NoteBombProjectile : MonoBehaviour
 
     [SerializeField]
     float delay;
-    
+
+    PlayerMove target;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        target = GameObject.FindObjectOfType<PlayerMove>();
         Vector3 screenPosition = Camera.main.ScreenToWorldPoint(
             new Vector3(Random.Range(0,Screen.width),
             Random.Range(0,Screen.height),
@@ -70,6 +73,16 @@ public class NoteBombProjectile : MonoBehaviour
             proj.GetComponent<Rigidbody2D>().velocity = new Vector3(moveDirection.x, moveDirection.y, moveDirection.z);
 
             angle += angleStep;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Parry")
+        {
+            //Debug.Log("Parried!");
+            target.IncreaseHealth(10);
+            Destroy(gameObject);
         }
     }
 }

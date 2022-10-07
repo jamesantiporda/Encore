@@ -11,10 +11,14 @@ public class NoteDrizzleBehavior : MonoBehaviour
     private string newNote;
     private BossBehavior boss;
 
+    private void Awake()
+    {
+        target = GameObject.FindObjectOfType<PlayerMove>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindObjectOfType<PlayerMove>();
         noteDrizzle = this.GetComponent<GameObject>();
         boss = GameObject.FindObjectOfType<BossBehavior>();
         Koreographer.Instance.RegisterForEvents("NoteDrizzle", FireNoteDrizzle);

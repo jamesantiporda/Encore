@@ -48,5 +48,10 @@ public class NoteProjectile : MonoBehaviour
             //Debug.Log("Hit!");
             Destroy(gameObject);
         }
+
+        if (collision.tag == "Bullet")
+        {
+            Destroy(gameObject);
+        }
     }
 }

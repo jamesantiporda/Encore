@@ -228,7 +228,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.49803922}
+  m_Color: {r: 1, g: 0.9803922, b: 0, a: 0.49803922}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -770,6 +770,7 @@ GameObject:
   - component: {fileID: 470674829}
   - component: {fileID: 470674830}
   - component: {fileID: 470674833}
+  - component: {fileID: 470674834}
   - component: {fileID: 470674831}
   - component: {fileID: 470674832}
   m_Layer: 0
@@ -1010,6 +1011,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fclef: {fileID: 2115522912742617031, guid: 59aa71d1ae617914281e495473002b7e, type: 3}
+--- !u!114 &470674834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470674820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a9c8ba3c82589449f68173071afbc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staffBlast: {fileID: 7797097165656191116, guid: 7b02ec1852580dc4da8c3d7df212b42b, type: 3}
 --- !u!1 &498072748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,7 +1191,7 @@ MonoBehaviour:
   bullet: {fileID: 3788584478104480740, guid: 99a30af73953f914390a436938890e9e, type: 3}
   normalBullet: {fileID: 2500405735872782130, guid: a34cbaf0ba542de40827713bf39662a7, type: 3}
   autoShoot: 0
-  shootIntervalSeconds: 0.23
+  shootIntervalSeconds: 0.15
   shootDelaySeconds: 0
   isActive: 0
 --- !u!1 &889724369
@@ -2021,6 +2035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a13104c658c9f4f9978c9d0ee80e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
 --- !u!212 &1692472383
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2124,7 +2139,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &1895227416

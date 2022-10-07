@@ -12,7 +12,7 @@ public class NoteRainManager : MonoBehaviour
     void Start()
     {
         boss = GetComponent<BossBehavior>();
-        Koreographer.Instance.RegisterForEvents("Piano", FireEventDebugLog);
+        Koreographer.Instance.RegisterForEvents("NoteRain", FireEventDebugLog);
     }
 
     // Update is called once per frame

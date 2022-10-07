@@ -9,7 +9,10 @@ public class PlayerMove : MonoBehaviour
 
     private Shield shield;
 
-    private int health;
+    [SerializeField]
+    private int health = 100;
+
+    private int initialMaxHealth;
 
     float moveSpeed = 10;
 
@@ -19,10 +22,14 @@ public class PlayerMove : MonoBehaviour
     float parryWindow = 0.2f;
     float parryTimer = 0.0f;
 
+    private int maxHealth;
+    private int hitCounter = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        health = 50;
+        initialMaxHealth = health;
+        maxHealth = health;
         gun = transform.GetComponentInChildren<Gun>();
         shield = transform.GetComponentInChildren<Shield>();
         gun.isActive = true;
@@ -37,6 +44,8 @@ public class PlayerMove : MonoBehaviour
             Time.timeScale = 0;
         }
 
+        maxHealth = initialMaxHealth - hitCounter;
+
 
         // Movement Input
         moveUp = Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W);
@@ -45,15 +54,16 @@ public class PlayerMove : MonoBehaviour
         moveRight = Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
 
         // Gun Shooting
-        auto = Input.GetKey(KeyCode.C);
+        auto = Input.GetKey(KeyCode.Z);
         gun.autoShoot = auto;
 
-        shoot = Input.GetKeyDown(KeyCode.Z);
+        /* shoot = Input.GetKeyDown(KeyCode.Z);
 
         if (shoot && !auto)
         {
             gun.ShootNormal();
         }
+        */
 
         parry = Input.GetKeyDown(KeyCode.X);
 
@@ -131,11 +141,12 @@ public class PlayerMove : MonoBehaviour
     public void DecreaseHealth(int damage)
     {
         health -= damage;
+        hitCounter += 2;
     }
 
     public void IncreaseHealth(int heal)
     {
-        if (health < 50)
+        if (health < maxHealth)
         {
             health += heal;
         }

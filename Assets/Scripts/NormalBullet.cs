@@ -45,5 +45,11 @@ public class NormalBullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (collision.tag == "Boss")
+        {
+            player.IncreaseHealth(1);
+            Destroy(gameObject);
+        }
     }
 }

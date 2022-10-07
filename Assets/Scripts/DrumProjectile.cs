@@ -6,6 +6,8 @@ public class DrumProjectile : MonoBehaviour
 {
     public float moveSpeed = 20f;
 
+    int health = 5;
+
     Rigidbody2D rb;
 
     PlayerMove target;
@@ -24,13 +26,16 @@ public class DrumProjectile : MonoBehaviour
         float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 15f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -40,6 +45,11 @@ public class DrumProjectile : MonoBehaviour
             target.DecreaseHealth(damage);
             //Debug.Log("Hit!");
             Destroy(gameObject);
+        }
+
+        if (collision.tag == "Bullet")
+        {
+            health -= 1;
         }
     }
 }
