@@ -20,6 +20,8 @@ public class BossBehavior : MonoBehaviour
 
     private int randomizer;
 
+    float yPosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -131,6 +133,12 @@ public class BossBehavior : MonoBehaviour
         if(segmentAttacks[currentSegment][attackPicked] == "NoteDrizzle")
         {
             noteDrizzle.InitializeAttack();
+        }
+
+        if(segmentAttacks[currentSegment][attackPicked] == "FClef")
+        {
+            yPosition = Random.Range(-3.4f, 3.4f);
+            //transform.position = new Vector3(transform.position.x, yPosition, transform.position.z);
         }
 
         return segmentAttacks[currentSegment][attackPicked];

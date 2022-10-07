@@ -7,33 +7,44 @@ public class PlayerMove : MonoBehaviour
 {
     private Gun gun;
 
+    private Shield shield;
+
     private int health;
 
     float moveSpeed = 10;
 
-    bool moveUp, moveDown, moveLeft, moveRight, shoot, auto;
+    bool moveUp, moveDown, moveLeft, moveRight, shoot, auto, parry;
+
+    float parryCooldown = 0.2f;
+    float parryWindow = 0.2f;
+    float parryTimer = 0.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         health = 50;
         gun = transform.GetComponentInChildren<Gun>();
+        shield = transform.GetComponentInChildren<Shield>();
         gun.isActive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Health
         if(health <= 0)
         {
             Time.timeScale = 0;
         }
 
+
+        // Movement Input
         moveUp = Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W);
         moveDown = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
         moveLeft = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A);
         moveRight = Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
 
+        // Gun Shooting
         auto = Input.GetKey(KeyCode.C);
         gun.autoShoot = auto;
 
@@ -43,10 +54,24 @@ public class PlayerMove : MonoBehaviour
         {
             gun.ShootNormal();
         }
+
+        parry = Input.GetKeyDown(KeyCode.X);
+
+        if(parry && parryTimer >= parryCooldown)
+        {
+            shield.ActivateParry();
+            parryTimer = 0.0f;
+        }
+        else
+        {
+            parryTimer += Time.deltaTime;
+        }
+
     }
 
     private void FixedUpdate()
     {
+        // Movement
         Vector2 pos = transform.position;
 
         float moveAmount = moveSpeed * Time.fixedDeltaTime;
@@ -81,23 +106,24 @@ public class PlayerMove : MonoBehaviour
         }
 
         pos += move;
-        /*if (pos.x <= -0.84f)
+
+        if (pos.x <= -12.11f)
         {
-            pos.x = -0.84f;
+            pos.x = -12.11f;
         }
-        if (pos.x >= 18.7f)
+        if (pos.x >= 12.11f)
         {
-            pos.x = 18.7f;
+            pos.x = 12.11f;
         }
-        if (pos.y <= 1.22f)
+        if (pos.y <= -4.79f)
         {
-            pos.y = 1.22f;
+            pos.y = -4.79f;
         }
-        if (pos.y >= 8.75f)
+        if (pos.y >= 4.79f)
         {
-            pos.y = 8.75f;
+            pos.y = 4.79f;
         }
-        */
+        
 
         transform.position = pos;
     }

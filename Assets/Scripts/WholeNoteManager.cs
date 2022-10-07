@@ -29,7 +29,7 @@ public class WholeNoteManager : MonoBehaviour
         }
         else
         {
-            if(boss.ReturnCurrentAttack() != "Chord" && boss.ReturnCurrentAttack() != "NoteBomb")
+            if(boss.ReturnCurrentAttack() != "Chord" && boss.ReturnCurrentAttack() != "NoteBomb" && boss.ReturnCurrentAttack() != "DoubleStaff")
             {
                 Instantiate(wholeNote, transform.position, Quaternion.identity);
             }
