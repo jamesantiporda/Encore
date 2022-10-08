@@ -7,6 +7,8 @@ public class PlayerMove : MonoBehaviour
 {
     private Gun gun;
 
+    public GameObject music;
+
     private Shield shield;
 
     [SerializeField]
@@ -42,6 +44,7 @@ public class PlayerMove : MonoBehaviour
         if(health <= 0)
         {
             Time.timeScale = 0;
+            music.SetActive(false);
         }
 
         maxHealth = initialMaxHealth - hitCounter;

@@ -20,6 +20,6 @@ public class HealthUpdater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textMesh.text = "HP: " + player.ReturnHealth() + " AMMO: " + gun.ReturnAmmo();
+        textMesh.text = "HP: " + player.ReturnHealth();
     }
 }

@@ -102,7 +102,7 @@ MonoBehaviour:
   initialYPosition: 5
   finalYPosition: -6
   velocity: 10
-  damage: 6
+  damage: 3
 --- !u!58 &7907340369162399579
 CircleCollider2D:
   m_ObjectHideFlags: 0
