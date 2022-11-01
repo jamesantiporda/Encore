@@ -6,6 +6,8 @@ public class BossBehavior : MonoBehaviour
 {
     [SerializeField]
     private CSVReader reader;
+    [SerializeField]
+    private CSVReader reader1;
 
     private float songLength;
     private float[] segmentDurations;
@@ -14,7 +16,7 @@ public class BossBehavior : MonoBehaviour
     private int currentSegment;
     private string[][] segmentAttacks;
     private string[] attacks = {"Drums", "WholeNote", "NoteRain", "Chord", "NoteDrizzle", "Lunge", "FClef", "NoteBomb", "DoubleStaff", "StaffBlast"};
-    private string currentAttack;
+    private string currentAttack, currentAttack1;
     private NoteDrizzleBehavior noteDrizzle;
     private DrumManager drums;
 
@@ -38,6 +40,7 @@ public class BossBehavior : MonoBehaviour
         songLength = 0;
 
         currentAttack = "";
+        currentAttack1 = "";
 
         for(int i = 0; i < reader.GetNumberOfValueRows(); i++)
         {
@@ -62,7 +65,8 @@ public class BossBehavior : MonoBehaviour
 
         for (int i = 0; i < segmentDurations.Length; i++)
         {
-            segmentAttacks[i] = AttackAssignment(i).Split(",");
+            segmentAttacks[i] = AttackAssignment(i, reader).Split(",");
+            segmentAttacks[i] = AttackAssignment(i, reader1).Split(",");
         }
 
         currentAttack = AttackPick();
@@ -144,12 +148,12 @@ public class BossBehavior : MonoBehaviour
         return segmentAttacks[currentSegment][attackPicked];
     }
 
-    string AttackAssignment(int segment)
+    string AttackAssignment(int segment, CSVReader csv)
     {
         string s = "";
 
-        float uniquePitches = reader.GetValue("Number_of_Pitches", segment);
-        float range = reader.GetValue("Range", segment);
+        float uniquePitches = csv.GetValue("Number_of_Pitches", segment);
+        float range = csv.GetValue("Range", segment);
         if (uniquePitches >= 30 && range >= 50)
         {
             if (s == "")
@@ -158,8 +162,8 @@ public class BossBehavior : MonoBehaviour
                 s += ",NoteRain";
         }
 
-        float chordDuration = reader.GetValue("Chord_Duration", segment);
-        float majorMinorThirds = reader.GetValue("Vertical_Minor_Third_Prevalence", segment) + reader.GetValue("Vertical_Major_Third_Prevalence", segment);
+        float chordDuration = csv.GetValue("Chord_Duration", segment);
+        float majorMinorThirds = csv.GetValue("Vertical_Minor_Third_Prevalence", segment) + csv.GetValue("Vertical_Major_Third_Prevalence", segment);
         if (majorMinorThirds >= 0.2)
         {
             if (s == "")
@@ -184,8 +188,8 @@ public class BossBehavior : MonoBehaviour
                 s += ",Lunge";
         }
 
-        float repeatedNotes = reader.GetValue("Repeated_Notes", segment);
-        float staccato = reader.GetValue("Amount_of_Staccato", segment);
+        float repeatedNotes = csv.GetValue("Repeated_Notes", segment);
+        float staccato = csv.GetValue("Amount_of_Staccato", segment);
         if(repeatedNotes >= 0.6 || staccato >= 0.2)
         {
             if (s == "")
@@ -194,8 +198,8 @@ public class BossBehavior : MonoBehaviour
                 s += ",FClef";
         }
 
-        float unpitchedNotes = reader.GetValue("Unpitched_Percussion_Instrument_Prevalence", segment);
-        float simultaneousPitches = reader.GetValue("Average_Number_of_Simultaneous_Pitches", segment);
+        float unpitchedNotes = csv.GetValue("Unpitched_Percussion_Instrument_Prevalence", segment);
+        float simultaneousPitches = csv.GetValue("Average_Number_of_Simultaneous_Pitches", segment);
         if (unpitchedNotes > 0.0 || majorMinorThirds >= 0.2)
         {
             if (s == "")
@@ -204,9 +208,9 @@ public class BossBehavior : MonoBehaviour
                 s += ",NoteBomb";
         }
 
-        float violinPrevalence = reader.GetValue("Violin_Prevalence", segment);
-        float chromatic = reader.GetValue("Chromatic_Motion", segment);
-        float stepwise = reader.GetValue("Stepwise_Motion", segment);
+        float violinPrevalence = csv.GetValue("Violin_Prevalence", segment);
+        float chromatic = csv.GetValue("Chromatic_Motion", segment);
+        float stepwise = csv.GetValue("Stepwise_Motion", segment);
         if (violinPrevalence > 0 || chromatic >= 0.40 || stepwise >= 0.40) // && range >= 30))
         {
             if (s == "")

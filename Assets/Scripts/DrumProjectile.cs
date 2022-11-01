@@ -6,7 +6,7 @@ public class DrumProjectile : MonoBehaviour
 {
     public float moveSpeed = 20f;
 
-    int health = 5;
+    int health = 2;
 
     Rigidbody2D rb;
 

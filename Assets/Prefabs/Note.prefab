@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialYPosition: 5
   finalYPosition: -6
-  velocity: 10
+  velocity: 5
   damage: 3
 --- !u!58 &7907340369162399579
 CircleCollider2D:

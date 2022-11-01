@@ -26,7 +26,7 @@ public class NoteRainManager : MonoBehaviour
         // Debug.Log(koreoEvent.GetIntValue());
         if(boss.ReturnCurrentAttack() == "NoteRain")
         {
-            Instantiate(noteObject, new Vector3(-10.4f + (koreoEvent.GetIntValue() - 21) * (20.8f / 88), 0f, 0f), Quaternion.identity);
+            Instantiate(noteObject, new Vector3(-8.63f + (koreoEvent.GetIntValue() - 21) * (17.26f / 88), 0f, 0f), Quaternion.identity);
         }
     }
 }

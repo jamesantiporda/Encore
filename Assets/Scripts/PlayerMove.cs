@@ -120,13 +120,13 @@ public class PlayerMove : MonoBehaviour
 
         pos += move;
 
-        if (pos.x <= -12.11f)
+        if (pos.x <= -8.63f)
         {
-            pos.x = -12.11f;
+            pos.x = -8.63f;
         }
-        if (pos.x >= 12.11f)
+        if (pos.x >= 8.63f)
         {
-            pos.x = 12.11f;
+            pos.x = 8.63f;
         }
         if (pos.y <= -4.79f)
         {
