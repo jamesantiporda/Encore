@@ -11,7 +11,7 @@ public class Shield : MonoBehaviour
 
     float parryTimer = 0;
     float parryWindow = 0.1f;
-    
+
     // Start is called before the first frame update
     void Start()
     {

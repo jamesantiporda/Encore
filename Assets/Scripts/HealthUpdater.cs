@@ -23,6 +23,7 @@ public class HealthUpdater : MonoBehaviour
     {
         textMesh.text = "HP: " + player.ReturnHealth()
                                + " Combo: " + scoremanager.ReturnCombo()
-                               + " Score: " + scoremanager.ReturnScore();
+                               + " Score: " + scoremanager.ReturnScore()
+                               + " Lives: " + player.ReturnLives();
     }
 }

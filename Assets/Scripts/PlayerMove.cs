@@ -27,11 +27,13 @@ public class PlayerMove : MonoBehaviour
     float parryTimer = 0.0f;
 
     private int maxHealth;
+    private int lives;
     private int hitCounter = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        lives = 1;
         initialMaxHealth = health;
         maxHealth = health;
         gun = transform.GetComponentInChildren<Gun>();
@@ -43,7 +45,7 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         // Health
-        if(health <= 0)
+        if(lives == 0)
         {
             Time.timeScale = 0;
             music.SetActive(false);
@@ -148,6 +150,11 @@ public class PlayerMove : MonoBehaviour
         health -= damage;
         hitCounter += 2;
         scoremanager.ResetCombo();
+        if(health <= 0 && lives >= 1)
+        {
+            health = 100;
+            lives -= 1;
+        }
     }
 
     public void IncreaseHealth(int heal)
@@ -161,5 +168,15 @@ public class PlayerMove : MonoBehaviour
     public int ReturnHealth()
     {
         return health;
+    }
+
+    public int ReturnLives()
+    {
+        return lives;
+    }
+
+    public void addLife()
+    {
+        lives += 1;
     }
 }

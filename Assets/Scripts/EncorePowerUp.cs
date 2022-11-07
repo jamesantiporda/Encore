@@ -2,33 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FClefProjectile : MonoBehaviour
+public class EncorePowerUp : MonoBehaviour
 {
-    //public float initialXPosition;
+    private float initialXPosition;
     private float finalXPosition;
+
     public float velocity;
+
     private Vector3 initialPosition;
     private Vector3 finalPosition;
-    private float rotationSpeed = 360f;
+
     private PlayerMove target;
-
-    [SerializeField]
-    int damage;
-
+    private Shield shield;
+    
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindObjectOfType<PlayerMove>();
+        shield = GameObject.FindObjectOfType<Shield>();
         finalXPosition = -12.0f;
-        //initialPosition = new Vector3(initialXPosition, transform.position.y, 0);
-        finalPosition = new Vector3(finalXPosition, transform.position.y, 0);
-        //transform.position = initialPosition;
+        finalPosition = new Vector3(finalXPosition, transform.position.y, 0);   
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
         transform.position -= new Vector3(velocity * Time.deltaTime, 0, 0);
         if (transform.position.x <= finalXPosition)
         {
@@ -40,8 +38,7 @@ public class FClefProjectile : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            target.DecreaseHealth(damage);
-            //Debug.Log("Hit!");
+            target.addLife();
             Destroy(gameObject);
         }
     }
