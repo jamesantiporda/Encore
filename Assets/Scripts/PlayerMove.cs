@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviour
 
     private Shield shield;
 
+    public ScoreManager scoremanager;
+
     [SerializeField]
     private int health = 100;
 
@@ -145,6 +147,7 @@ public class PlayerMove : MonoBehaviour
     {
         health -= damage;
         hitCounter += 2;
+        scoremanager.ResetCombo();
     }
 
     public void IncreaseHealth(int heal)

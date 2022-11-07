@@ -6,7 +6,8 @@ public class NormalBullet : MonoBehaviour
 {
     public Vector3 direction = new Vector3(1, 0, 0);
     public float speed = 2;
-
+    
+    private ScoreManager scoremanager;
     PlayerMove player;
 
     private Vector3 velocity;
@@ -15,6 +16,7 @@ public class NormalBullet : MonoBehaviour
     void Start()
     {
         player = GameObject.FindObjectOfType<PlayerMove>();
+        scoremanager = GameObject.FindObjectOfType<ScoreManager>();
         Destroy(gameObject, 3);
         DontDestroyOnLoad(gameObject);
     }
@@ -43,11 +45,13 @@ public class NormalBullet : MonoBehaviour
     {
         if (collision.tag == "SmallDestroyable" || collision.tag == "Attack")
         {
+            scoremanager.AddScore();
             Destroy(gameObject);
         }
 
         if (collision.tag == "Boss")
         {
+            scoremanager.AddScore();
             player.IncreaseHealth(1);
             Destroy(gameObject);
         }

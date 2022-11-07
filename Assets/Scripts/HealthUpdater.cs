@@ -8,6 +8,7 @@ public class HealthUpdater : MonoBehaviour
     private TextMeshProUGUI textMesh;
     private PlayerMove player;
     private Gun gun;
+    public ScoreManager scoremanager;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,8 @@ public class HealthUpdater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textMesh.text = "HP: " + player.ReturnHealth();
+        textMesh.text = "HP: " + player.ReturnHealth()
+                               + " Combo: " + scoremanager.ReturnCombo()
+                               + " Score: " + scoremanager.ReturnScore();
     }
 }

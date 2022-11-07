@@ -5,11 +5,13 @@ using UnityEngine;
 public class Shield : MonoBehaviour
 {
     public bool isActive;
+
     private SpriteRenderer spriteRenderer;
     private CircleCollider2D circleCollider;
+
     float parryTimer = 0;
     float parryWindow = 0.1f;
-
+    
     // Start is called before the first frame update
     void Start()
     {

@@ -5,7 +5,10 @@ using UnityEngine;
 public class NearMissScript : MonoBehaviour
 {
     public bool isActive;
+    public ScoreManager scoreManager;
+
     private SpriteRenderer spriteRenderer;
+
     float nearMissTimer = 0;
     float nearMissShowWindow = 0.1f;
 
@@ -34,6 +37,7 @@ public class NearMissScript : MonoBehaviour
     {
         isActive = true;
         spriteRenderer.enabled = isActive;
+        scoreManager.AddCombo();
     }
 
     public void HideNearMiss()
