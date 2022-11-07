@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7797097165656191107}
   m_Layer: 0
   m_Name: StaffBeam
-  m_TagString: Untagged
+  m_TagString: AttackThrough
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
