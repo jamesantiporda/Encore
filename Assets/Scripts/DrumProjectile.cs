@@ -5,12 +5,14 @@ using UnityEngine;
 public class DrumProjectile : MonoBehaviour
 {
     public float moveSpeed = 20f;
+    bool dodged;
 
     int health = 2;
 
     Rigidbody2D rb;
 
     PlayerMove target;
+    NearMissScript nearMissZone;
     Vector2 moveDirection;
 
     [SerializeField]
@@ -20,6 +22,8 @@ public class DrumProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dodged = false;
+        nearMissZone = GameObject.FindObjectOfType<NearMissScript>();
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindObjectOfType<PlayerMove>();
         moveDirection = (target.transform.position - transform.position).normalized * moveSpeed;
@@ -45,6 +49,15 @@ public class DrumProjectile : MonoBehaviour
             target.DecreaseHealth(damage);
             //Debug.Log("Hit!");
             Destroy(gameObject);
+        }
+
+        if (!dodged)
+        {
+            if(collision.tag == "NearMissZone")
+            {
+                nearMissZone.ShowNearMiss();
+                dodged = true;
+            }
         }
 
         if (collision.tag == "Bullet")

@@ -12,6 +12,7 @@ TagManager:
   - AttackThrough
   - PowerUp
   - SoundBarrier
+  - NearMissZone
   layers:
   - Default
   - TransparentFX

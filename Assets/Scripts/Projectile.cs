@@ -6,6 +6,9 @@ public class Projectile : MonoBehaviour
 {
     PlayerMove target;
 
+    bool dodged;
+    NearMissScript nearMissZone;
+
     [SerializeField]
     int damage = 3;
 
@@ -13,6 +16,8 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dodged = false;
+        nearMissZone = GameObject.FindObjectOfType<NearMissScript>();
         target = GameObject.FindObjectOfType<PlayerMove>();
         Destroy(gameObject, 15f);
     }
@@ -30,6 +35,15 @@ public class Projectile : MonoBehaviour
             //Debug.Log("Hit!");
             target.DecreaseHealth(damage);
             Destroy(gameObject);
+        }
+
+        if (!dodged)
+        {
+            if(collision.tag == "NearMissZone")
+            {
+                nearMissZone.ShowNearMiss();
+                dodged = true;
+            }
         }
 
         if(collision.tag == "SoundBarrier")

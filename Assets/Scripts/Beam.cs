@@ -17,10 +17,14 @@ public class Beam : MonoBehaviour
     private PlayerMove target;
 
     bool isActive;
+    bool dodged;
+    NearMissScript nearMissZone;
 
     // Start is called before the first frame update
     void Start()
     {
+        dodged = false;
+        nearMissZone = GameObject.FindObjectOfType<NearMissScript>();
         isActive = false;
         sprite = GetComponent<SpriteRenderer>();
         hitbox = GetComponent<BoxCollider2D>();
@@ -69,6 +73,18 @@ public class Beam : MonoBehaviour
         if(collision.tag == "Player")
         {
             target.DecreaseHealth(damage);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!dodged)
+        {
+            if(collision.tag == "NearMissZone")
+            {
+                nearMissZone.ShowNearMiss();
+                dodged = true;
+            }
         }
     }
 }

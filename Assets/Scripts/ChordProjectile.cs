@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChordProjectile : MonoBehaviour
 {
     public float moveSpeed = 7f;
+    bool dodged;
 
     [SerializeField]
     int damage = 10;
@@ -12,12 +13,16 @@ public class ChordProjectile : MonoBehaviour
     Rigidbody2D rb;
 
     PlayerMove target;
+    NearMissScript nearMissZone;
+
     Vector2 moveDirection;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        dodged = false;
+        nearMissZone = GameObject.FindObjectOfType<NearMissScript>();
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindObjectOfType<PlayerMove>();
         moveDirection = (target.transform.position - transform.position).normalized * moveSpeed;
@@ -47,6 +52,15 @@ public class ChordProjectile : MonoBehaviour
             //Debug.Log("Parried!");
             target.IncreaseHealth(5);
             Destroy(gameObject);
+        }
+
+        if (!dodged)
+        {
+            if(collision.tag == "NearMissZone")
+            {
+                nearMissZone.ShowNearMiss();
+                dodged = true;
+            }
         }
 
         if(collision.tag == "SoundBarrier")

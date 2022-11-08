@@ -22,10 +22,14 @@ public class NoteBombProjectile : MonoBehaviour
 
     PlayerMove target;
 
+    bool dodged;
+    NearMissScript nearMissZone;
 
     // Start is called before the first frame update
     void Start()
     {
+        dodged = false;
+        nearMissZone = GameObject.FindObjectOfType<NearMissScript>();
         target = GameObject.FindObjectOfType<PlayerMove>();
         Vector3 screenPosition = Camera.main.ScreenToWorldPoint(
             new Vector3(Random.Range(0,Screen.width),
@@ -62,7 +66,7 @@ public class NoteBombProjectile : MonoBehaviour
 
         for (int i = 0; i < numberOfProjectiles; i++)
         {
-            Debug.Log("HAAAI");
+            Debug.Log("KYABOM");
             float projectileDirXposition = startPoint.x + Mathf.Sin((angle * Mathf.PI) / 180) * 5f;
             float projectileDirYposition = startPoint.y + Mathf.Cos((angle * Mathf.PI) / 180) * 5f;
 
@@ -88,6 +92,15 @@ public class NoteBombProjectile : MonoBehaviour
         if(collision.tag == "SoundBarrier")
         {
             Destroy(gameObject);
+        }
+
+        if (!dodged)
+        {
+            if(collision.tag == "NearMissZone")
+            {
+                nearMissZone.ShowNearMiss();
+                dodged = true;
+            }
         }
     }
 }

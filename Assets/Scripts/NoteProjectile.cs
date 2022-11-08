@@ -13,11 +13,16 @@ public class NoteProjectile : MonoBehaviour
     private Vector3 finalPosition;
     private PlayerMove target;
 
+    bool dodged;
+    NearMissScript nearMissZone;
+
     [SerializeField]
     int damage = 3;
 
     void Start()
     {
+        dodged = false;
+        nearMissZone = GameObject.FindObjectOfType<NearMissScript>();
         target = GameObject.FindObjectOfType<PlayerMove>();
         initialPosition = new Vector3(transform.position.x, initialYPosition, 0);
         finalPosition = new Vector3(transform.position.x, finalYPosition, 0);
@@ -47,6 +52,15 @@ public class NoteProjectile : MonoBehaviour
             target.DecreaseHealth(damage);
             //Debug.Log("Hit!");
             Destroy(gameObject);
+        }
+
+        if (!dodged)
+        {
+            if(collision.tag == "NearMissZone")
+            {
+                nearMissZone.ShowNearMiss();
+                dodged = true;
+            }
         }
 
         if (collision.tag == "Bullet")

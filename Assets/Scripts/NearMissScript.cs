@@ -47,11 +47,11 @@ public class NearMissScript : MonoBehaviour
         spriteRenderer.enabled = isActive;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == "Attack" || collision.tag == "SmallDestroyable" || collision.tag == "AttackThrough")
-        {
-            ShowNearMiss();
-        }
-    }
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     if(collision.tag == "Attack" || collision.tag == "SmallDestroyable" || collision.tag == "AttackThrough")
+    //     {
+    //         ShowNearMiss();
+    //     }
+    // }
 }

@@ -4902,3 +4902,30 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 2008.974759 seconds.
+  path: Assets/Prefabs/BombProjectile.prefab
+  artifactKey: Guid(af5fdce41dff98a46aa20490f4b363f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BombProjectile.prefab using Guid(af5fdce41dff98a46aa20490f4b363f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0bc57aa4638e62d5fd9561f91115559') in 0.840262 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001229 seconds.
+  path: Assets/Prefabs/FClef.prefab
+  artifactKey: Guid(59aa71d1ae617914281e495473002b7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/FClef.prefab using Guid(59aa71d1ae617914281e495473002b7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dbe0e21b166bd45144e2ca1740c0e6d') in 0.048093 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001647 seconds.
+  path: Assets/Prefabs/DoubleStaff.prefab
+  artifactKey: Guid(72d4452090604a74c9747d532bc8e8e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/DoubleStaff.prefab using Guid(72d4452090604a74c9747d532bc8e8e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e4e3b1eda74b3322d4bf178b07d893a') in 0.043922 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000104 seconds.
+  path: Assets/Prefabs/Chord.prefab
+  artifactKey: Guid(487c90be420a78a40b927d2694803d59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Chord.prefab using Guid(487c90be420a78a40b927d2694803d59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a736b7ce668c7caee5e3a2fae6b070e') in 0.033814 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting

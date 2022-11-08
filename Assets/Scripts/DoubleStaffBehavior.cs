@@ -11,12 +11,17 @@ public class DoubleStaffBehavior : MonoBehaviour
     private Vector3 finalPosition;
     private PlayerMove target;
 
+    bool dodged;
+    NearMissScript nearMissZone;
+    
     [SerializeField]
     int damage = 1;
 
     // Start is called before the first frame update
     void Start()
     {
+        dodged = false;
+        nearMissZone = GameObject.FindObjectOfType<NearMissScript>();
         target = GameObject.FindObjectOfType<PlayerMove>();
         initialPosition = new Vector3(initialXPosition, transform.position.y, 0);
         finalPosition = new Vector3(finalXPosition, transform.position.y, 0);
@@ -44,6 +49,18 @@ public class DoubleStaffBehavior : MonoBehaviour
         if(collision.tag == "SoundBarrier")
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!dodged)
+        {
+            if(collision.tag == "NearMissZone")
+            {
+                nearMissZone.ShowNearMiss();
+                dodged = true;
+            }
         }
     }
 }

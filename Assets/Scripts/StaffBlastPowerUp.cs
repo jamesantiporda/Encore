@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundBarrier : MonoBehaviour
+public class StaffBlastPowerUp : MonoBehaviour
 {
     public bool isActive;
 
     private SpriteRenderer spriteRenderer;
-    private CircleCollider2D circleCollider;
-    private PlayerMove player;
+    private BoxCollider2D boxCollider;
+    private ScoreManager scoremanager;
 
     float powerUpTimer = 0;
     float powerUpWindow = 5.0f;
@@ -17,11 +17,11 @@ public class SoundBarrier : MonoBehaviour
     void Start()
     {
         isActive = false;
-        player = GameObject.FindObjectOfType<PlayerMove>();
+        scoremanager = GameObject.FindObjectOfType<ScoreManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        circleCollider = GetComponent<CircleCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
         spriteRenderer.enabled = isActive;
-        circleCollider.enabled = isActive;
+        boxCollider.enabled = isActive;
     }
 
     // Update is called once per frame
@@ -32,25 +32,31 @@ public class SoundBarrier : MonoBehaviour
             powerUpTimer += Time.deltaTime;
             if(powerUpTimer >= powerUpWindow)
             {
-                DeactivateBarrier();
+                DeactivateStaffBlast();
             }
         }
     }
 
-    public void ActivateBarrier()
+    public void ActivateStaffBlast()
     {
         isActive = true;
-        player.isInvuln = true;
         spriteRenderer.enabled = isActive;
-        circleCollider.enabled = isActive;
+        boxCollider.enabled = isActive;
     }
 
-    public void DeactivateBarrier()
+    public void DeactivateStaffBlast()
     {
         powerUpTimer = 0.0f;
         isActive = false;
-        player.isInvuln = false;
         spriteRenderer.enabled = isActive;
-        circleCollider.enabled = isActive;
+        boxCollider.enabled = isActive;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.tag == "Boss")
+        {
+            scoremanager.AddScore();
+        }
     }
 }

@@ -12,12 +12,17 @@ public class FClefProjectile : MonoBehaviour
     private float rotationSpeed = 360f;
     private PlayerMove target;
 
+    bool dodged;
+    NearMissScript nearMissZone;
+
     [SerializeField]
     int damage;
 
     // Start is called before the first frame update
     void Start()
     {
+        dodged = false;
+        nearMissZone = GameObject.FindObjectOfType<NearMissScript>();
         target = GameObject.FindObjectOfType<PlayerMove>();
         finalXPosition = -12.0f;
         //initialPosition = new Vector3(initialXPosition, transform.position.y, 0);
@@ -43,6 +48,15 @@ public class FClefProjectile : MonoBehaviour
             target.DecreaseHealth(damage);
             //Debug.Log("Hit!");
             Destroy(gameObject);
+        }
+
+        if (!dodged)
+        {
+            if(collision.tag == "NearMissZone")
+            {
+                nearMissZone.ShowNearMiss();
+                dodged = true;
+            }
         }
 
         if(collision.tag == "SoundBarrier")
