@@ -20,7 +20,10 @@ public class PlayerMove : MonoBehaviour
 
     float moveSpeed = 10;
 
-    bool moveUp, moveDown, moveLeft, moveRight, shoot, auto, parry;
+    bool moveUp, moveDown, moveLeft, moveRight
+               , shoot, auto, parry;
+
+    public bool isInvuln;
 
     float parryCooldown = 0.2f;
     float parryWindow = 0.2f;
@@ -39,6 +42,7 @@ public class PlayerMove : MonoBehaviour
         gun = transform.GetComponentInChildren<Gun>();
         shield = transform.GetComponentInChildren<Shield>();
         gun.isActive = true;
+        isInvuln = false;
     }
 
     // Update is called once per frame
@@ -147,13 +151,16 @@ public class PlayerMove : MonoBehaviour
 
     public void DecreaseHealth(int damage)
     {
-        health -= damage;
-        hitCounter += 2;
-        scoremanager.ResetCombo();
-        if(health <= 0 && lives >= 1)
+        if(!isInvuln)
         {
-            health = 100;
-            lives -= 1;
+            health -= damage;
+            hitCounter += 2;
+            scoremanager.ResetCombo();
+            if(health <= 0 && lives >= 1)
+            {
+                health = 100;
+                lives -= 1;
+            }
         }
     }
 

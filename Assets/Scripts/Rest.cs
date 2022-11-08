@@ -2,26 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundBarrier : MonoBehaviour
+public class Rest : MonoBehaviour
 {
     public bool isActive;
 
     private SpriteRenderer spriteRenderer;
-    private CircleCollider2D circleCollider;
-    private PlayerMove player;
+    private BoxCollider2D boxCollider;
 
     float powerUpTimer = 0;
-    float powerUpWindow = 350.0f;
+    float powerUpWindow = 0.1f;
 
     // Start is called before the first frame update
     void Start()
     {
         isActive = false;
-        player = GameObject.FindObjectOfType<PlayerMove>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        circleCollider = GetComponent<CircleCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
         spriteRenderer.enabled = isActive;
-        circleCollider.enabled = isActive;
+        boxCollider.enabled = isActive;
     }
 
     // Update is called once per frame
@@ -32,25 +30,23 @@ public class SoundBarrier : MonoBehaviour
             powerUpTimer += Time.deltaTime;
             if(powerUpTimer >= powerUpWindow)
             {
-                DeactivateBarrier();
+                DeactivateRest();
             }
         }
     }
 
-    public void ActivateBarrier()
+    public void ActivateRest()
     {
         isActive = true;
-        player.isInvuln = true;
         spriteRenderer.enabled = isActive;
-        circleCollider.enabled = isActive;
+        boxCollider.enabled = isActive;
     }
 
-    public void DeactivateBarrier()
+    public void DeactivateRest()
     {
         powerUpTimer = 0.0f;
         isActive = false;
-        player.isInvuln = false;
         spriteRenderer.enabled = isActive;
-        circleCollider.enabled = isActive;
+        boxCollider.enabled = isActive;
     }
 }
