@@ -84,5 +84,10 @@ public class NoteBombProjectile : MonoBehaviour
             target.IncreaseHealth(10);
             Destroy(gameObject);
         }
+
+        if(collision.tag == "SoundBarrier")
+        {
+            Destroy(gameObject);
+        }
     }
 }

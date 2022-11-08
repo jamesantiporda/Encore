@@ -11,6 +11,7 @@ TagManager:
   - Parry
   - AttackThrough
   - PowerUp
+  - SoundBarrier
   layers:
   - Default
   - TransparentFX

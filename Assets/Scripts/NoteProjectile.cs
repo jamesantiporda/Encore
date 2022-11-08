@@ -53,5 +53,10 @@ public class NoteProjectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if(collision.tag == "SoundBarrier")
+        {
+            Destroy(gameObject);
+        }
     }
 }

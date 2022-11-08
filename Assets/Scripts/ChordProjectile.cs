@@ -48,5 +48,10 @@ public class ChordProjectile : MonoBehaviour
             target.IncreaseHealth(5);
             Destroy(gameObject);
         }
+
+        if(collision.tag == "SoundBarrier")
+        {
+            Destroy(gameObject);
+        }
     }
 }

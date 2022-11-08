@@ -40,5 +40,10 @@ public class DoubleStaffBehavior : MonoBehaviour
             //Debug.Log("Hit!");
             target.DecreaseHealth(damage);
         }
+
+        if(collision.tag == "SoundBarrier")
+        {
+            Destroy(gameObject);
+        }
     }
 }

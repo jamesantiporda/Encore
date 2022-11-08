@@ -51,5 +51,10 @@ public class DrumProjectile : MonoBehaviour
         {
             health -= 1;
         }
+
+        if(collision.tag == "SoundBarrier")
+        {
+            Destroy(gameObject);
+        }
     }
 }

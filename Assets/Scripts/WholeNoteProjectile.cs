@@ -44,5 +44,10 @@ public class WholeNoteProjectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if(collision.tag == "SoundBarrier")
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -13,12 +13,12 @@ public class SoundBarrierPowerUpProjectile : MonoBehaviour
     private Vector3 finalPosition;
 
     private PlayerMove target;
-    private Shield shield;
+    private SoundBarrier soundBarrier;
     
     // Start is called before the first frame update
     void Start()
     {
-        shield = GameObject.FindObjectOfType<Shield>();
+        soundBarrier = GameObject.FindObjectOfType<SoundBarrier>();
         finalXPosition = -12.0f;
         finalPosition = new Vector3(finalXPosition, transform.position.y, 0);   
     }
@@ -37,6 +37,7 @@ public class SoundBarrierPowerUpProjectile : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            soundBarrier.ActivateBarrier();
             Destroy(gameObject);
         }
     }

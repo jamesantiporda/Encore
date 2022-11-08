@@ -44,5 +44,10 @@ public class FClefProjectile : MonoBehaviour
             //Debug.Log("Hit!");
             Destroy(gameObject);
         }
+
+        if(collision.tag == "SoundBarrier")
+        {
+            Destroy(gameObject);
+        }
     }
 }

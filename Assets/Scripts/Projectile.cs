@@ -31,5 +31,10 @@ public class Projectile : MonoBehaviour
             target.DecreaseHealth(damage);
             Destroy(gameObject);
         }
+
+        if(collision.tag == "SoundBarrier")
+        {
+            Destroy(gameObject);
+        }
     }
 }
