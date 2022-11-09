@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviour
 
     private Shield shield;
 
+    private AudioSource audioSource;
+
     public ScoreManager scoremanager;
 
     [SerializeField]
@@ -41,6 +43,11 @@ public class PlayerMove : MonoBehaviour
         maxHealth = health;
         gun = transform.GetComponentInChildren<Gun>();
         shield = transform.GetComponentInChildren<Shield>();
+
+        audioSource = music.GetComponent<AudioSource>();
+        
+        audioSource.volume = SettingsMenu.volume;
+
         gun.isActive = true;
         isInvuln = false;
     }
