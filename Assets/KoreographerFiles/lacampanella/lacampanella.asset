@@ -1,0 +1,1091 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2076007791, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
+  m_Name: lacampanella
+  m_EditorClassIdentifier: 
+  mSourceClip: {fileID: 8300000, guid: fa997adb7933cf84a8c84c7a4e14d1dc, type: 3}
+  mAudioFilePath: 
+  mSampleRate: 44100
+  mIgnoreLatencyOffset: 0
+  mTempoSections:
+  - sectionName: Section
+    startSample: 0
+    samplesPerBeat: 13639.13775
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 177308
+    samplesPerBeat: 15034.06485
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 222410
+    samplesPerBeat: 16746.7986
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 239157
+    samplesPerBeat: 20671.80885
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 280501
+    samplesPerBeat: 14074.44885
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 350873
+    samplesPerBeat: 13639.13775
+    beatsPerMeasure: 4
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 405430
+    samplesPerBeat: 13639.13775
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 896439
+    samplesPerBeat: 13431.4488
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 1017322
+    samplesPerBeat: 14074.44885
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 1052508
+    samplesPerBeat: 16746.7986
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 1060881
+    samplesPerBeat: 13431.4488
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 1134754
+    samplesPerBeat: 16746.7986
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 1143128
+    samplesPerBeat: 13431.4488
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 1458767
+    samplesPerBeat: 16746.7986
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 1467140
+    samplesPerBeat: 13431.4488
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 1547729
+    samplesPerBeat: 13229.977949999999
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 2778117
+    samplesPerBeat: 12844.63215
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 2932252
+    samplesPerBeat: 12481.11585
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 2969696
+    samplesPerBeat: 12306.9429
+    beatsPerMeasure: 7
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 3055844
+    samplesPerBeat: 12306.9429
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 3277369
+    samplesPerBeat: 12844.63215
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 3380126
+    samplesPerBeat: 13639.13775
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 3721105
+    samplesPerBeat: 13431.4488
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 3922576
+    samplesPerBeat: 13229.977949999999
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 4028416
+    samplesPerBeat: 15034.06485
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 4043450
+    samplesPerBeat: 14074.44885
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 4057525
+    samplesPerBeat: 13639.13775
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 4071164
+    samplesPerBeat: 13229.977949999999
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 4719433
+    samplesPerBeat: 13639.13775
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 4801268
+    samplesPerBeat: 13639.13775
+    beatsPerMeasure: 4
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 4910381
+    samplesPerBeat: 15034.06485
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 4921656
+    samplesPerBeat: 19313.8155
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 4926485
+    samplesPerBeat: 15564.67605
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 4942049
+    samplesPerBeat: 15034.06485
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 4957083
+    samplesPerBeat: 14538.42495
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5000699
+    samplesPerBeat: 15034.06485
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5030767
+    samplesPerBeat: 13229.977949999999
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5083687
+    samplesPerBeat: 15034.06485
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5094962
+    samplesPerBeat: 17407.8576
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5099314
+    samplesPerBeat: 15564.67605
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5114879
+    samplesPerBeat: 15034.06485
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5129913
+    samplesPerBeat: 14782.0995
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5174259
+    samplesPerBeat: 15564.67605
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5205389
+    samplesPerBeat: 13229.977949999999
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5258309
+    samplesPerBeat: 15034.06485
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5269584
+    samplesPerBeat: 15844.270050000001
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5273545
+    samplesPerBeat: 15294.762
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5304135
+    samplesPerBeat: 15034.06485
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5319169
+    samplesPerBeat: 15564.67605
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5339922
+    samplesPerBeat: 16134.1173
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5345300
+    samplesPerBeat: 16746.7986
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5350882
+    samplesPerBeat: 14782.0995
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5365664
+    samplesPerBeat: 14302.66635
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5379967
+    samplesPerBeat: 14538.42495
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5409044
+    samplesPerBeat: 14302.66635
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5423346
+    samplesPerBeat: 14782.0995
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5452911
+    samplesPerBeat: 14074.44885
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5466985
+    samplesPerBeat: 14538.42495
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5496062
+    samplesPerBeat: 13853.37555
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5509915
+    samplesPerBeat: 14538.42495
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5538992
+    samplesPerBeat: 14302.66635
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5581900
+    samplesPerBeat: 14538.42495
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5610977
+    samplesPerBeat: 14782.0995
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5670105
+    samplesPerBeat: 15383.755799999999
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5700873
+    samplesPerBeat: 16134.1173
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5725074
+    samplesPerBeat: 26460
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5738304
+    samplesPerBeat: 16134.1173
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5770572
+    samplesPerBeat: 14538.42495
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5799649
+    samplesPerBeat: 14782.0995
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5858777
+    samplesPerBeat: 15383.755799999999
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5889545
+    samplesPerBeat: 16134.1173
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5913746
+    samplesPerBeat: 24054.543449999997
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5925773
+    samplesPerBeat: 16134.1173
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 5958042
+    samplesPerBeat: 14538.42495
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 6074349
+    samplesPerBeat: 14538.42495
+    beatsPerMeasure: 9
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 6161580
+    samplesPerBeat: 15564.67605
+    beatsPerMeasure: 9
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 6208274
+    samplesPerBeat: 15564.67605
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 6395050
+    samplesPerBeat: 18123.2478
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 6830008
+    samplesPerBeat: 12481.11585
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 6904894
+    samplesPerBeat: 24054.543449999997
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 6940976
+    samplesPerBeat: 25442.3043
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 6979140
+    samplesPerBeat: 26999.98245
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 7019640
+    samplesPerBeat: 28760.851349999997
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 7062781
+    samplesPerBeat: 16134.1173
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 7095049
+    samplesPerBeat: 17407.8576
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 7478022
+    samplesPerBeat: 18899.937
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 7534722
+    samplesPerBeat: 16746.7986
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 7584962
+    samplesPerBeat: 16134.1173
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 7633365
+    samplesPerBeat: 15564.67605
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 7820141
+    samplesPerBeat: 16746.7986
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 7870381
+    samplesPerBeat: 18123.2478
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 7888504
+    samplesPerBeat: 22810.3281
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 7934125
+    samplesPerBeat: 21688.44615
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 7955813
+    samplesPerBeat: 20198.4174
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 7976012
+    samplesPerBeat: 19746.216
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 7990821
+    samplesPerBeat: 25442.3043
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 7997182
+    samplesPerBeat: 22810.3281
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8019992
+    samplesPerBeat: 18899.937
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8076692
+    samplesPerBeat: 18503.4339
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8113699
+    samplesPerBeat: 18123.2478
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8168069
+    samplesPerBeat: 17758.342350000003
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8221344
+    samplesPerBeat: 17407.8576
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8325791
+    samplesPerBeat: 18123.2478
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8343914
+    samplesPerBeat: 17407.8576
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8361322
+    samplesPerBeat: 18899.937
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8399122
+    samplesPerBeat: 20671.80885
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8419794
+    samplesPerBeat: 25442.3043
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8438876
+    samplesPerBeat: 36750.00735
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8448063
+    samplesPerBeat: 30767.4234
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8471139
+    samplesPerBeat: 36750.00735
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8480326
+    samplesPerBeat: 21688.44615
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8523703
+    samplesPerBeat: 18123.2478
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8578073
+    samplesPerBeat: 16746.7986
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8628313
+    samplesPerBeat: 16134.1173
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8676715
+    samplesPerBeat: 19746.216
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8696462
+    samplesPerBeat: 16134.1173
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8712596
+    samplesPerBeat: 13639.13775
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8726235
+    samplesPerBeat: 12481.11585
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8763678
+    samplesPerBeat: 11972.81925
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8835515
+    samplesPerBeat: 15034.06485
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8839274
+    samplesPerBeat: 13229.977949999999
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8845889
+    samplesPerBeat: 12481.11585
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8864610
+    samplesPerBeat: 12660.272099999998
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8874106
+    samplesPerBeat: 13229.977949999999
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8913796
+    samplesPerBeat: 11211.8517
+    beatsPerMeasure: 3
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8919401
+    samplesPerBeat: 10933.86735
+    beatsPerMeasure: 3
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 8946736
+    samplesPerBeat: 10669.3335
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9021421
+    samplesPerBeat: 10295.696249999999
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9036865
+    samplesPerBeat: 13639.13775
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9047094
+    samplesPerBeat: 23625.009449999998
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9053001
+    samplesPerBeat: 10541.81835
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9079355
+    samplesPerBeat: 10541.81835
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9153148
+    samplesPerBeat: 10295.696249999999
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9168591
+    samplesPerBeat: 13229.977949999999
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9178514
+    samplesPerBeat: 23625.009449999998
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9184420
+    samplesPerBeat: 10541.81835
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9210775
+    samplesPerBeat: 10417.302
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9273279
+    samplesPerBeat: 10295.696249999999
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9304166
+    samplesPerBeat: 10176.9129
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9334696
+    samplesPerBeat: 10060.81965
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9364879
+    samplesPerBeat: 9947.35035
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9384773
+    samplesPerBeat: 9836.416799999999
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9394610
+    samplesPerBeat: 10669.3335
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9405279
+    samplesPerBeat: 10933.86735
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9438081
+    samplesPerBeat: 9517.9707
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9457117
+    samplesPerBeat: 11812.47165
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9468929
+    samplesPerBeat: 10417.302
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9521016
+    samplesPerBeat: 11504.322900000001
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9532520
+    samplesPerBeat: 11211.8517
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9566156
+    samplesPerBeat: 9517.9707
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9585192
+    samplesPerBeat: 11812.47165
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9597004
+    samplesPerBeat: 10417.302
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9649091
+    samplesPerBeat: 11504.322900000001
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9660595
+    samplesPerBeat: 11211.8517
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9694230
+    samplesPerBeat: 9517.9707
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9713266
+    samplesPerBeat: 11812.47165
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9725079
+    samplesPerBeat: 10669.3335
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9746418
+    samplesPerBeat: 10417.302
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9777669
+    samplesPerBeat: 15034.06485
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9792703
+    samplesPerBeat: 13639.13775
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9819982
+    samplesPerBeat: 12137.5989
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9832119
+    samplesPerBeat: 10417.302
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9842537
+    samplesPerBeat: 9947.35035
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9852484
+    samplesPerBeat: 14074.44885
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9894707
+    samplesPerBeat: 12844.63215
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9933241
+    samplesPerBeat: 11504.322900000001
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 9967754
+    samplesPerBeat: 10933.86735
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10000556
+    samplesPerBeat: 10541.81835
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10032181
+    samplesPerBeat: 10176.9129
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10062712
+    samplesPerBeat: 9947.35035
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10122396
+    samplesPerBeat: 10176.9129
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10152927
+    samplesPerBeat: 8820
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10170567
+    samplesPerBeat: 8480.76075
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10255374
+    samplesPerBeat: 8820
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10264194
+    samplesPerBeat: 9799.9902
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10303394
+    samplesPerBeat: 9382.9806
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10397224
+    samplesPerBeat: 10060.81965
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10477711
+    samplesPerBeat: 10933.86735
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10521446
+    samplesPerBeat: 10669.3335
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10553454
+    samplesPerBeat: 10626.5124
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10585334
+    samplesPerBeat: 10584.02205
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10617086
+    samplesPerBeat: 10541.81835
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10648711
+    samplesPerBeat: 10499.9895
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10743211
+    samplesPerBeat: 10458.51345
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10774587
+    samplesPerBeat: 10417.302
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10899594
+    samplesPerBeat: 10844.2782
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10910439
+    samplesPerBeat: 10584.02205
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 10921023
+    samplesPerBeat: 10417.302
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11004361
+    samplesPerBeat: 11117.67615
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11015479
+    samplesPerBeat: 14074.44885
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11022516
+    samplesPerBeat: 25442.3043
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11035237
+    samplesPerBeat: 13229.977949999999
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11061697
+    samplesPerBeat: 14074.44885
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11075772
+    samplesPerBeat: 10799.97975
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11097372
+    samplesPerBeat: 10417.302
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11118206
+    samplesPerBeat: 10295.696249999999
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11313824
+    samplesPerBeat: 10176.9129
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11364709
+    samplesPerBeat: 10669.3335
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11375378
+    samplesPerBeat: 10417.302
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11385796
+    samplesPerBeat: 10176.9129
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11426503
+    samplesPerBeat: 10669.3335
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11437173
+    samplesPerBeat: 10417.302
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11447590
+    samplesPerBeat: 8999.99415
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11465590
+    samplesPerBeat: 10669.3335
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11476259
+    samplesPerBeat: 8732.682
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11493725
+    samplesPerBeat: 10669.3335
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11504394
+    samplesPerBeat: 8732.682
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11513127
+    samplesPerBeat: 15034.06485
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11528161
+    samplesPerBeat: 12306.9429
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11552775
+    samplesPerBeat: 12844.63215
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11578464
+    samplesPerBeat: 10417.302
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11609716
+    samplesPerBeat: 10669.3335
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  - sectionName: Section
+    startSample: 11673732
+    samplesPerBeat: 15750.0063
+    beatsPerMeasure: 6
+    bStartNewMeasure: 0
+  mTracks:
+  - {fileID: 11400000, guid: 98d73a98618962e49a2e2c96525306d2, type: 2}
+  - {fileID: 11400000, guid: db94f69d5de2a5744aefe433d1784681, type: 2}
+  - {fileID: 11400000, guid: c5813f5e51ac65841ba76d8a55952599, type: 2}
+  - {fileID: 11400000, guid: 7b70b877cb72f6040b7e44619e41e6a3, type: 2}
+  - {fileID: 11400000, guid: afd2492143f211444b5a82dae99609df, type: 2}
+  - {fileID: 11400000, guid: 5c8dcf59932433243a3e89d2e5fc3ec3, type: 2}

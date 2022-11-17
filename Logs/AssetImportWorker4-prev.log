@@ -1,0 +1,301 @@
+Unity Editor version:    2021.3.5f1 (40eb3a945986)
+Branch:                  2021.3/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 12.5 (Build 21G72)
+Darwin version:          21.6.0
+Architecture:            x86_64
+Running under Rosetta:   YES
+Available memory:        8192 MB
+Using pre-set license
+Pro License: YES
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/2021.3.5f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker4
+-projectPath
+/Users/bodit/Documents/College/Thesis/Encore/encoredevelopment
+-logFile
+Logs/AssetImportWorker4.log
+-srvPort
+59278
+Successfully changed project path to: /Users/bodit/Documents/College/Thesis/Encore/encoredevelopment
+/Users/bodit/Documents/College/Thesis/Encore/encoredevelopment
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 156.35 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.5f1 (40eb3a945986)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2021.3.5f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/bodit/Documents/College/Thesis/Encore/encoredevelopment/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+ preferred device: Apple M1 (high power)
+Metal devices available: 1
+0: Apple M1 (high power)
+Using device Apple M1 (high power)
+Initializing Metal device caps: Apple M1
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/2021.3.5f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2021.3.5f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/2021.3.5f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56874
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2021.3.5f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.000991 seconds.
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 112.12 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.584 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1585ms)
+		BeginReloadAssembly (174ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (3ms)
+		EndReloadAssembly (1150ms)
+			LoadAssemblies (171ms)
+			RebuildTransferFunctionScriptingTraits (1ms)
+			SetupTypeCache (149ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (808ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (20ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (112ms)
+				BeforeProcessingInitializeOnLoad (6ms)
+				ProcessInitializeOnLoadAttributes (491ms)
+				ProcessInitializeOnLoadMethodAttributes (176ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.014838 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/bodit/Documents/College/Thesis/Encore/encoredevelopment/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/bodit/Documents/College/Thesis/Encore/encoredevelopment/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 108.57 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.733 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2736ms)
+		BeginReloadAssembly (291ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (40ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (45ms)
+		EndReloadAssembly (2133ms)
+			LoadAssemblies (181ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (361ms)
+			ReleaseScriptCaches (4ms)
+			RebuildScriptCaches (80ms)
+			SetupLoadedEditorAssemblies (1331ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (109ms)
+				BeforeProcessingInitializeOnLoad (147ms)
+				ProcessInitializeOnLoadAttributes (902ms)
+				ProcessInitializeOnLoadMethodAttributes (161ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launching external process: /Applications/Unity/Hub/Editor/2021.3.5f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.88 seconds
+Refreshing native plugins compatible for Editor in 0.89 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4135 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 46 unused Assets / (43.5 KB). Loaded Objects now: 4609.
+Memory consumption went from 270.5 MB to 270.5 MB.
+Total: 5.362708 ms (FindLiveObjects: 0.334542 ms CreateObjectMapping: 0.130416 ms MarkObjects: 4.268250 ms  DeleteObjects: 0.628250 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1908126.925781 seconds.
+  path: Assets/Prefabs/Drum.prefab
+  artifactKey: Guid(5ffffb259eefa9b459416a1ca9fbbf5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Drum.prefab using Guid(5ffffb259eefa9b459416a1ca9fbbf5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fac2a1f0a37d9990bf6caebf21da61b1') in 0.878742 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.610673 seconds.
+  path: Assets/Prefabs/Drum.prefab
+  artifactKey: Guid(5ffffb259eefa9b459416a1ca9fbbf5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Drum.prefab using Guid(5ffffb259eefa9b459416a1ca9fbbf5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8d7239a0a75e5159f15e8e9bdafb075') in 0.101395 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.233764 seconds.
+  path: Assets/Prefabs/Drum.prefab
+  artifactKey: Guid(5ffffb259eefa9b459416a1ca9fbbf5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Drum.prefab using Guid(5ffffb259eefa9b459416a1ca9fbbf5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5768ad1e7ff5da49ffb4bfb83920630') in 0.008777 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 52.982807 seconds.
+  path: Assets/Sprites/DrumSprite.png
+  artifactKey: Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/DrumSprite.png using Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30d1114557a343369d6a825578049dfa') in 0.240508 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 46.319328 seconds.
+  path: Assets/Sprites/DrumSprite.png
+  artifactKey: Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/DrumSprite.png using Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3abe5fc2af41480878282fac54e40bc7') in 0.029894 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.398587 seconds.
+  path: Assets/Sprites/DrumSprite.png
+  artifactKey: Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/DrumSprite.png using Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23fefa777f39f9362d69315f327bb96a') in 0.031227 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 81.485676 seconds.
+  path: Assets/Sprites/DrumSprite.png
+  artifactKey: Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/DrumSprite.png using Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5c90053db0c5d0fc8f489c8cf6e7307') in 0.040926 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 38.835416 seconds.
+  path: Assets/Sprites/DrumSprite.png
+  artifactKey: Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/DrumSprite.png using Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb0aa426c0af02a213027d71d653ee6c') in 0.060348 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.322435 seconds.
+  path: Assets/Sprites/DrumSprite.png
+  artifactKey: Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/DrumSprite.png using Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64364e10297bd6b6d0539d7dbb7f9db9') in 0.037700 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 129.795167 seconds.
+  path: Assets/Sprites/DrumSprite.png
+  artifactKey: Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/DrumSprite.png using Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee8768c5648c0a56ed1d76f0d7891112') in 0.046540 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.355989 seconds.
+  path: Assets/Sprites/DrumSprite.png
+  artifactKey: Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/DrumSprite.png using Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '296d9fa4590e7da44574e41e30db29fb') in 0.035045 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.253000 seconds.
+  path: Assets/Sprites/DrumSprite.png
+  artifactKey: Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/DrumSprite.png using Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '354ffe851d167fd6091dd827e8fb827b') in 0.027952 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 124.870460 seconds.
+  path: Assets/Sprites/DrumSprite.png
+  artifactKey: Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/DrumSprite.png using Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f36d23588f09b25beb7eda28c4a1e90e') in 0.058357 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.474421 seconds.
+  path: Assets/Sprites/DrumSprite.png
+  artifactKey: Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/DrumSprite.png using Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d3b7797b533079ec605c496bf5fc2fe') in 0.024399 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 31.465702 seconds.
+  path: Assets/Sprites/DrumSprite.png
+  artifactKey: Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/DrumSprite.png using Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2f88bc2e0721f7194f4b43c9574162e') in 0.043431 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.272995 seconds.
+  path: Assets/Sprites/DrumSprite.png
+  artifactKey: Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/DrumSprite.png using Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f36585f9afbe72f99bd4c277fb69f700') in 0.035299 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 123.501605 seconds.
+  path: Assets/Sprites/DrumSprite.png
+  artifactKey: Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/DrumSprite.png using Guid(ab13a0b93120440aabaa6c85956d7926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68d3895833cdd050bf3e773ebab25349') in 0.041161 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 218.445634 seconds.
+  path: Assets/Sprites/EncorePowerUpSprite.png
+  artifactKey: Guid(1525721c7526a49f7a55db18d0a0a9b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/EncorePowerUpSprite.png using Guid(1525721c7526a49f7a55db18d0a0a9b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12ec2a764c2491556ef8752c48ed8dc2') in 0.082589 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000150 seconds.
+  path: Assets/Sprites/PlayerSprite.png
+  artifactKey: Guid(f2b7d0e5d90af44158ba27b7510cad12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/PlayerSprite.png using Guid(f2b7d0e5d90af44158ba27b7510cad12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07a6062c3882aacdaa0feb3332c9411e') in 0.063472 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/Sprites/SoundBarrierSprite.png
+  artifactKey: Guid(2dde66d8eecd641ea86b04c299887729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/SoundBarrierSprite.png using Guid(2dde66d8eecd641ea86b04c299887729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c4b01548aa6fa74c822d144ffb131c5') in 0.018855 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Sprites/RestSprite.png
+  artifactKey: Guid(e166200c6fc5b499bb4987f775cc4ae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/RestSprite.png using Guid(e166200c6fc5b499bb4987f775cc4ae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e710976cd5e40721c32db311e7bc4f88') in 0.017084 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Sprites/ShieldSprite.png
+  artifactKey: Guid(fb654b280427c4d0db5f858f44f917c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/ShieldSprite.png using Guid(fb654b280427c4d0db5f858f44f917c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f4522aeed96e824d9c33034eacb743f') in 0.023229 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting

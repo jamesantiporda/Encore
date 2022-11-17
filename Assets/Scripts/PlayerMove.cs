@@ -25,13 +25,16 @@ public class PlayerMove : MonoBehaviour
     float moveSpeed = 10;
 
     bool moveUp, moveDown, moveLeft, moveRight
-               , shoot, auto, parry;
+               , shoot, auto, parry, iFrame;
 
     public bool isInvuln;
 
     float parryCooldown = 0.2f;
     float parryWindow = 0.2f;
     float parryTimer = 0.0f;
+
+    float iFrames = 0.5f;
+    float iFrameTimer = 0.0f;
 
     private int maxHealth;
     private int lives;
@@ -40,6 +43,7 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        iFrame = false;
         lives = 1;
         initialMaxHealth = health;
         maxHealth = health;
@@ -96,6 +100,22 @@ public class PlayerMove : MonoBehaviour
         else
         {
             parryTimer += Time.deltaTime;
+        }
+
+        // iFrames
+        if(iFrame)
+        {
+            if(iFrameTimer >= iFrames)
+            {
+                iFrame = false;
+                isInvuln = iFrame;
+                iFrameTimer = 0.0f;
+            }
+            else
+            {
+                isInvuln = iFrame;
+                iFrameTimer += Time.deltaTime;
+            }
         }
 
     }
@@ -165,6 +185,7 @@ public class PlayerMove : MonoBehaviour
             health -= damage;
             hitCounter += 2;
             scoremanager.ResetCombo();
+            iFrame = true;
             if(health <= 0 && lives >= 1)
             {
                 health = 100;
