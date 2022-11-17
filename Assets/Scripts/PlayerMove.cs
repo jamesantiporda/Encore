@@ -15,6 +15,8 @@ public class PlayerMove : MonoBehaviour
 
     public ScoreManager scoremanager;
 
+    public Animator animator;
+
     [SerializeField]
     private int health = 100;
 
@@ -64,16 +66,17 @@ public class PlayerMove : MonoBehaviour
 
         maxHealth = initialMaxHealth - hitCounter;
 
-
         // Movement Input
         moveUp = Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W);
         moveDown = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
         moveLeft = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A);
         moveRight = Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
+        animator.SetBool("IsMoving", moveUp || moveDown || moveLeft || moveRight);
 
         // Gun Shooting
         auto = Input.GetKey(KeyCode.Z);
         gun.autoShoot = auto;
+        animator.SetBool("IsShooting",auto);
 
         /* shoot = Input.GetKeyDown(KeyCode.Z);
 
@@ -152,7 +155,6 @@ public class PlayerMove : MonoBehaviour
             pos.y = 3.91f;
         }
         
-
         transform.position = pos;
     }
 
