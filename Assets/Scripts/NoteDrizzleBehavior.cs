@@ -6,6 +6,7 @@ using SonicBloom.Koreo;
 public class NoteDrizzleBehavior : MonoBehaviour
 {
     private GameObject noteDrizzle;
+    public GameObject zone;
     PlayerMove target;
     public GameObject noteObject;
     private string newNote;
@@ -69,6 +70,12 @@ public class NoteDrizzleBehavior : MonoBehaviour
 
     public void InitializeAttack()
     {
+        zone.SetActive(true);
         transform.position = new Vector3(target.transform.position.x, transform.position.y, transform.position.z);
+    }
+
+    public void DeactivateAttack()
+    {
+        zone.SetActive(false);
     }
 }

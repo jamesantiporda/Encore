@@ -33,7 +33,7 @@ public class PlayerMove : MonoBehaviour
     float parryWindow = 0.2f;
     float parryTimer = 0.0f;
 
-    float iFrames = 0.5f;
+    float iFrames = 0.1f;
     float iFrameTimer = 0.0f;
 
     private int maxHealth;
@@ -105,9 +105,11 @@ public class PlayerMove : MonoBehaviour
         // iFrames
         if(iFrame)
         {
+            animator.SetBool("isInvincible", iFrame);
             if(iFrameTimer >= iFrames)
             {
                 iFrame = false;
+                animator.SetBool("isInvincible", iFrame);
                 isInvuln = iFrame;
                 iFrameTimer = 0.0f;
             }
@@ -187,6 +189,20 @@ public class PlayerMove : MonoBehaviour
             scoremanager.ResetCombo();
             iFrame = true;
             if(health <= 0 && lives >= 1)
+            {
+                health = 100;
+                lives -= 1;
+            }
+        }
+    }
+
+    public void DecreaseHealthPerFrame(int damage)
+    {
+        if (!isInvuln)
+        {
+            health -= damage;
+            scoremanager.ResetCombo();
+            if (health <= 0 && lives >= 1)
             {
                 health = 100;
                 lives -= 1;

@@ -13,6 +13,7 @@ public class Beam : MonoBehaviour
     private SpriteRenderer sprite;
     private BoxCollider2D hitbox;
     private StaffBlastBehavior emitter;
+    private Animator animator;
 
     private PlayerMove target;
 
@@ -23,6 +24,7 @@ public class Beam : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         dodged = false;
         nearMissZone = GameObject.FindObjectOfType<NearMissScript>();
         isActive = false;
@@ -31,6 +33,8 @@ public class Beam : MonoBehaviour
         sprite.enabled = isActive;
         hitbox.enabled = isActive;
         target = GameObject.FindObjectOfType<PlayerMove>();
+
+        animator.SetBool("isShooting", false);
     }
 
     // Update is called once per frame
@@ -51,6 +55,7 @@ public class Beam : MonoBehaviour
 
     public void ShootBeam()
     {
+        animator.SetBool("isShooting", true);
         isActive = true;
         sprite.enabled = isActive;
         hitbox.enabled = isActive;
@@ -58,6 +63,7 @@ public class Beam : MonoBehaviour
 
     public void StopBeam()
     {
+        animator.SetBool("isShooting", false);
         isActive = false;
         sprite.enabled = isActive;
         hitbox.enabled = isActive;
@@ -72,7 +78,7 @@ public class Beam : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            target.DecreaseHealth(damage);
+            target.DecreaseHealthPerFrame(damage);
         }
     }
 

@@ -6,6 +6,7 @@ public class StaffBlastBehavior : MonoBehaviour
 {
     private Beam beam;
     private PlayerMove target;
+    public GameObject cue;
 
     private Vector3 direction;
 
@@ -16,21 +17,27 @@ public class StaffBlastBehavior : MonoBehaviour
 
     float beamTimer;
     float beamTime = 0.0f;
+    float t = 0.0f;
+
+    private Vector3 initialPosition;
+    private Vector3 finalPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        initialPosition = new Vector3(50, 0, 0);
+        transform.position = initialPosition;
         Vector3 screenPosition = Camera.main.ScreenToWorldPoint(
             new Vector3(Random.Range(0, Screen.width),
             Random.Range(0, Screen.height),
             Camera.main.farClipPlane / 2)
         );
-        transform.position = screenPosition;
+        finalPosition = screenPosition;
 
         target = GameObject.FindObjectOfType<PlayerMove>();
         beam = GetComponentInChildren<Beam>();
         beamTimer = beam.GetBeamTimer();
-        direction = (transform.position - target.transform.position).normalized;
+        direction = (finalPosition - target.transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
@@ -38,7 +45,10 @@ public class StaffBlastBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(cueTime >= cueTimer)
+        transform.position = new Vector3(Mathf.Lerp(initialPosition.x, finalPosition.x, t), Mathf.Lerp(initialPosition.y, finalPosition.y, t), 0);
+        t += 3.0f * Time.deltaTime;
+
+        if (cueTime >= cueTimer)
         {
             beam.ShootBeam();
             beamShot = true;
@@ -50,6 +60,7 @@ public class StaffBlastBehavior : MonoBehaviour
 
         if(beamShot == true)
         {
+            Destroy(cue);
             if(beamTime >= beamTimer)
             {
                 Destroy(gameObject);

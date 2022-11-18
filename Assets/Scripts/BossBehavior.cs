@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SonicBloom.Koreo;
 
 public class BossBehavior : MonoBehaviour
 {
@@ -9,9 +10,12 @@ public class BossBehavior : MonoBehaviour
     [SerializeField]
     private CSVReader reader1;
 
+    private Animator animator;
+
     private float songLength;
+    private float meanPitch;
     private float[] segmentDurations;
-    private float[] segmentTimestamps;
+    private float[] segmentPitches;
     private float startTime, elapsedTime, attackTimer, previousAttackTime, previousSegmentTime;
     private int currentSegment;
     private string[][] segmentAttacks;
@@ -19,6 +23,15 @@ public class BossBehavior : MonoBehaviour
     private string currentAttack, currentAttack1;
     private NoteDrizzleBehavior noteDrizzle;
     private DrumManager drums;
+    private Vector3 oldPosition;
+    private Vector3 newPosition;
+    private float t = 0;
+    public float speed = 0.1f;
+    private bool moving = false;
+
+    private float playingTime = 0.5f;
+    private float lastPlayTimer = 0.0f;
+    private bool playing = false;
 
     private int randomizer;
 
@@ -27,6 +40,12 @@ public class BossBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
+        Koreographer.Instance.RegisterForEvents("NoteRain", Playing);
+        Koreographer.Instance.RegisterForEvents("Chords", Playing);
+        Koreographer.Instance.RegisterForEvents("NoteDrizzle", Playing);
+        Koreographer.Instance.RegisterForEvents("Piano", Playing);
+        oldPosition = transform.position;
         noteDrizzle = GameObject.FindObjectOfType<NoteDrizzleBehavior>();
         drums = GetComponent<DrumManager>();
         randomizer = 0;
@@ -48,17 +67,12 @@ public class BossBehavior : MonoBehaviour
             songLength += segmentDurations[i];
         }
 
-        segmentTimestamps = new float[segmentDurations.Length];
-        for(int i = 0; i < segmentTimestamps.Length; i++)
+        segmentPitches = new float[segmentDurations.Length];
+        for(int i = 0; i < segmentPitches.Length; i++)
         {
-            if(i == 0)
-            {
-                segmentTimestamps[i] = 0;
-            }
-            else
-            {
-                segmentTimestamps[i] = segmentTimestamps[i - 1] + segmentDurations[i - 1];
-            }
+            
+             segmentPitches[i] = (reader.GetValue("Mean_Pitch", i) + reader1.GetValue("Mean_Pitch", i))/2;
+            
         }
 
         segmentAttacks = new string[segmentDurations.Length][];
@@ -76,10 +90,33 @@ public class BossBehavior : MonoBehaviour
     void Update()
     {
         //Debug.Log(currentSegment);
+        
+        if(lastPlayTimer >= playingTime)
+        {
+            playing = false;
+            animator.SetBool("IsPlaying", playing);
+        }
+        else
+        {
+            lastPlayTimer += Time.deltaTime;
+        }
+
         attackTimer = Time.time - previousAttackTime;
         if(attackTimer >= 5.0f)
         {
             currentAttack = AttackPick();
+        }
+
+        meanPitch = segmentPitches[currentSegment];
+        newPosition = new Vector3(transform.position.x, -2.0f + (meanPitch - 21) * (5.0f / 88), 0);
+        if (moving)
+        {
+            transform.position = new Vector3(transform.position.x, Mathf.Lerp(oldPosition.y, newPosition.y, t), 0);
+            t += speed * Time.deltaTime;
+            if (t >= 1.0f)
+            {
+                moving = false;
+            }
         }
     }
 
@@ -125,6 +162,9 @@ public class BossBehavior : MonoBehaviour
 
     string AttackPick()
     {
+        t = 0;
+        moving = true;
+        oldPosition = transform.position;
         drums.ResetCount();
         randomizer = Random.Range(0, 2);
         attackTimer = 0f;
@@ -133,6 +173,8 @@ public class BossBehavior : MonoBehaviour
 
         Debug.Log("Segment: " + currentSegment);
         Debug.Log("Attack: " + segmentAttacks[currentSegment][attackPicked]);
+
+        noteDrizzle.DeactivateAttack();
 
         if(segmentAttacks[currentSegment][attackPicked] == "NoteDrizzle")
         {
@@ -238,5 +280,12 @@ public class BossBehavior : MonoBehaviour
     public int ReturnRandomizer()
     {
         return randomizer;
+    }
+
+    void Playing(KoreographyEvent koreoEvent)
+    {
+        playing = true;
+        animator.SetBool("IsPlaying", playing);
+        lastPlayTimer = 0f;
     }
 }
