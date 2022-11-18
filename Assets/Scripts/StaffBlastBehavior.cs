@@ -25,7 +25,7 @@ public class StaffBlastBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        initialPosition = new Vector3(50, 0, 0);
+        initialPosition = new Vector3(10, 0, 0);
         transform.position = initialPosition;
         Vector3 screenPosition = Camera.main.ScreenToWorldPoint(
             new Vector3(Random.Range(0, Screen.width),
@@ -46,7 +46,7 @@ public class StaffBlastBehavior : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(Mathf.Lerp(initialPosition.x, finalPosition.x, t), Mathf.Lerp(initialPosition.y, finalPosition.y, t), 0);
-        t += 3.0f * Time.deltaTime;
+        t += 3.5f * Time.deltaTime;
 
         if (cueTime >= cueTimer)
         {
