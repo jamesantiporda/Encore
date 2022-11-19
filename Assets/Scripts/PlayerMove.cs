@@ -17,6 +17,10 @@ public class PlayerMove : MonoBehaviour
 
     public Animator animator;
 
+    public HealthBar healthBar;
+
+    public HealthBar hitBar;
+
     [SerializeField]
     private int health = 100;
 
@@ -39,19 +43,26 @@ public class PlayerMove : MonoBehaviour
     private int maxHealth;
     private int lives;
     private int hitCounter = 0;
+    private int totalHits = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         iFrame = false;
         lives = 1;
+
+        //Initialize Health
         initialMaxHealth = health;
         maxHealth = health;
+        healthBar.SetMaxHealth(initialMaxHealth);
+        hitBar.SetMaxHealth(initialMaxHealth);
+
+        //Set Gun and Shield objects
         gun = transform.GetComponentInChildren<Gun>();
         shield = transform.GetComponentInChildren<Shield>();
 
+        //Get Music
         audioSource = music.GetComponent<AudioSource>();
-        
         audioSource.volume = SettingsMenu.volume;
 
         gun.isActive = true;
@@ -69,6 +80,8 @@ public class PlayerMove : MonoBehaviour
         }
 
         maxHealth = initialMaxHealth - hitCounter;
+
+        hitBar.SetHealth(maxHealth);
 
         // Movement Input
         moveUp = Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W);
@@ -186,13 +199,17 @@ public class PlayerMove : MonoBehaviour
         {
             health -= damage;
             hitCounter += 2;
+            totalHits += 2;
             scoremanager.ResetCombo();
             iFrame = true;
             if(health <= 0 && lives >= 1)
             {
                 health = 100;
                 lives -= 1;
+                maxHealth = 100;
+                hitCounter = 0;
             }
+            healthBar.SetHealth(health);
         }
     }
 
@@ -206,7 +223,10 @@ public class PlayerMove : MonoBehaviour
             {
                 health = 100;
                 lives -= 1;
+                maxHealth = 100;
+                hitCounter = 0;
             }
+            healthBar.SetHealth(health);
         }
     }
 
@@ -216,6 +236,7 @@ public class PlayerMove : MonoBehaviour
         {
             health += heal;
         }
+        healthBar.SetHealth(health);
     }
 
     public int ReturnHealth()

@@ -10,6 +10,7 @@ public class StaffBlastPowerUp : MonoBehaviour
     private BoxCollider2D boxCollider;
     private ScoreManager scoremanager;
     public GameObject innerBeam;
+    public Animator animator;
 
     float powerUpTimer = 0;
     float powerUpWindow = 5.0f;
@@ -45,6 +46,8 @@ public class StaffBlastPowerUp : MonoBehaviour
         spriteRenderer.enabled = isActive;
         boxCollider.enabled = isActive;
         innerBeam.SetActive(true);
+        //animator.SetBool("isBeaming", isActive);
+
     }
 
     public void DeactivateStaffBlast()
@@ -54,6 +57,7 @@ public class StaffBlastPowerUp : MonoBehaviour
         spriteRenderer.enabled = isActive;
         boxCollider.enabled = isActive;
         innerBeam.SetActive(false);
+        //animator.SetBool("isBeaming", isActive);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
