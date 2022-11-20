@@ -11,6 +11,8 @@ public class WholeNoteProjectile : MonoBehaviour
     PlayerMove target;
     Vector2 moveDirection;
 
+    Animator animator;
+
     bool dodged;
     NearMissScript nearMissZone;
 
@@ -21,6 +23,7 @@ public class WholeNoteProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         dodged = false;
         nearMissZone = GameObject.FindObjectOfType<NearMissScript>();
         rb = GetComponent<Rigidbody2D>();
@@ -42,7 +45,7 @@ public class WholeNoteProjectile : MonoBehaviour
         {
             target.DecreaseHealth(damage);
             //Debug.Log("Hit!");
-            Destroy(gameObject);
+            DestroyAttack();
         }
 
         if (!dodged)
@@ -56,12 +59,17 @@ public class WholeNoteProjectile : MonoBehaviour
         
         if (collision.tag == "Bullet")
         {
-            Destroy(gameObject);
+            DestroyAttack();
         }
 
         if(collision.tag == "SoundBarrier")
         {
-            Destroy(gameObject);
+            DestroyAttack();
         }
+    }
+
+    void DestroyAttack()
+    {
+        Destroy(gameObject);
     }
 }

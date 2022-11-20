@@ -23,6 +23,7 @@ public class BossBehavior : MonoBehaviour
     private string currentAttack, currentAttack1;
     private NoteDrizzleBehavior noteDrizzle;
     private DrumManager drums;
+    private PowerUpManager powerUpManager;
     private Vector3 oldPosition;
     private Vector3 newPosition;
     private float t = 0;
@@ -37,17 +38,25 @@ public class BossBehavior : MonoBehaviour
 
     float yPosition;
 
+    private bool[] powerUpSegments;
+
+    float noteDensity, timeBetweenAttacks, noteDensity1, timeBetweenAttacks1;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+
         Koreographer.Instance.RegisterForEvents("NoteRain", Playing);
         Koreographer.Instance.RegisterForEvents("Chords", Playing);
         Koreographer.Instance.RegisterForEvents("NoteDrizzle", Playing);
         Koreographer.Instance.RegisterForEvents("Piano", Playing);
         oldPosition = transform.position;
+
         noteDrizzle = GameObject.FindObjectOfType<NoteDrizzleBehavior>();
+        powerUpManager = GameObject.FindObjectOfType<PowerUpManager>();
         drums = GetComponent<DrumManager>();
+
         randomizer = 0;
         currentSegment = 0;
         startTime = Time.time;
@@ -61,12 +70,35 @@ public class BossBehavior : MonoBehaviour
         currentAttack = "";
         currentAttack1 = "";
 
-        for(int i = 0; i < reader.GetNumberOfValueRows(); i++)
+        // Create Array of Durations of each Segment
+        for (int i = 0; i < reader.GetNumberOfValueRows(); i++)
         {
             segmentDurations[i] = reader.GetValue("Duration_in_Seconds", i);
             songLength += segmentDurations[i];
         }
 
+
+        // Create Array of Segments where Powerups spawn
+        powerUpSegments = new bool[reader.GetNumberOfValueRows()];
+
+        for (int i = 0; i < reader.GetNumberOfValueRows(); i++)
+        {
+            noteDensity = reader.GetValue("Note_Density", i);
+            noteDensity1 = reader1.GetValue("Note_Density", i);
+            timeBetweenAttacks = reader.GetValue("Average_Time_Between_Attacks", i);
+            timeBetweenAttacks1 = reader1.GetValue("Average_Time_Between_Attacks", i);
+
+            if (noteDensity >= 8 || noteDensity1 >= 8 || timeBetweenAttacks <= 0.150 || timeBetweenAttacks1 <= 0.150)
+            {
+                powerUpSegments[i] = true;
+            }
+            else
+            {
+                powerUpSegments[i] = false;
+            }
+        }
+
+        // Create Array of Mean Pitches of each Segment
         segmentPitches = new float[segmentDurations.Length];
         for(int i = 0; i < segmentPitches.Length; i++)
         {
@@ -75,6 +107,7 @@ public class BossBehavior : MonoBehaviour
             
         }
 
+        // Add Attacks to the attack pool of each segment
         segmentAttacks = new string[segmentDurations.Length][];
 
         for (int i = 0; i < segmentDurations.Length; i++)
@@ -187,6 +220,16 @@ public class BossBehavior : MonoBehaviour
             //transform.position = new Vector3(transform.position.x, yPosition, transform.position.z);
         }
 
+        if (powerUpSegments[currentSegment])
+        {
+            randomizer = Random.Range(0, 5);
+
+            if(randomizer == 1)
+            {
+                powerUpManager.SpawnPowerUp();
+            }
+        }
+
         return segmentAttacks[currentSegment][attackPicked];
     }
 
@@ -287,5 +330,13 @@ public class BossBehavior : MonoBehaviour
         playing = true;
         animator.SetBool("IsPlaying", playing);
         lastPlayTimer = 0f;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Bullet")
+        {
+            animator.SetTrigger("Hit");
+        }
     }
 }

@@ -11,6 +11,8 @@ public class DrumProjectile : MonoBehaviour
 
     Rigidbody2D rb;
 
+    Animator animator;
+
     PlayerMove target;
     NearMissScript nearMissZone;
     Vector2 moveDirection;
@@ -22,6 +24,7 @@ public class DrumProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         dodged = false;
         nearMissZone = GameObject.FindObjectOfType<NearMissScript>();
         rb = GetComponent<Rigidbody2D>();
@@ -63,6 +66,7 @@ public class DrumProjectile : MonoBehaviour
         if (collision.tag == "Bullet")
         {
             health -= 1;
+            animator.SetTrigger("Hit");
         }
 
         if(collision.tag == "SoundBarrier")
