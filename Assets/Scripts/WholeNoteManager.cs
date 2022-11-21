@@ -7,10 +7,12 @@ public class WholeNoteManager : MonoBehaviour
 {
     public GameObject wholeNote;
     private BossBehavior boss;
+    private LevelManager levelManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        levelManager = GameObject.FindObjectOfType<LevelManager>();
         boss = GetComponent<BossBehavior>();
         Koreographer.Instance.RegisterForEvents("Piano", FireWholeNotes);
     }
@@ -26,12 +28,14 @@ public class WholeNoteManager : MonoBehaviour
         if (boss.ReturnCurrentAttack() == "")
         {
             Instantiate(wholeNote, transform.position, Quaternion.identity);
+            levelManager.AddToTotalProjectiles();
         }
         else
         {
             if(boss.ReturnCurrentAttack() != "NoteBomb" && boss.ReturnCurrentAttack() != "DoubleStaff" && boss.ReturnCurrentAttack() != "Chord")
             {
                 Instantiate(wholeNote, transform.position, Quaternion.identity);
+                levelManager.AddToTotalProjectiles();
             }
         }
     }

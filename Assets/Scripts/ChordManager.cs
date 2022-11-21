@@ -7,10 +7,12 @@ public class ChordManager : MonoBehaviour
 {
     public GameObject chord;
     private BossBehavior boss;
+    private LevelManager levelManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        levelManager = GameObject.FindObjectOfType<LevelManager>();
         boss = GetComponent<BossBehavior>();
         Koreographer.Instance.RegisterForEvents("Chords", FireChord);
     }
@@ -26,6 +28,7 @@ public class ChordManager : MonoBehaviour
         if (boss.ReturnCurrentAttack() == "Chord")
         {
             Instantiate(chord, transform.position, Quaternion.identity);
+            levelManager.AddToTotalProjectiles();
         }
     }
 }

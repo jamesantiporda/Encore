@@ -7,10 +7,12 @@ public class StaffBlastManager : MonoBehaviour
 {
     public GameObject staffBlast;
     private BossBehavior boss;
+    private LevelManager levelManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        levelManager = GameObject.FindObjectOfType<LevelManager>();
         boss = GetComponent<BossBehavior>();
         Koreographer.Instance.RegisterForEvents("Chords", FireChord);
     }
@@ -26,6 +28,7 @@ public class StaffBlastManager : MonoBehaviour
         if (boss.ReturnCurrentAttack() == "StaffBlast" || boss.ReturnCurrentAttack() == "Lunge")
         {
             Instantiate(staffBlast, transform.position, Quaternion.identity);
+            levelManager.AddToTotalProjectiles();
         }
     }
 }

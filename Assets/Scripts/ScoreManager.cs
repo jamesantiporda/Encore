@@ -5,24 +5,32 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     int combo;
+    int highestCombo;
     int score;
+    int totalCombo;
 
     // Start is called before the first frame update
     void Start()
     {
         combo = 0;
         score = 0;
+        highestCombo = 0;
+        totalCombo = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(combo > highestCombo)
+        {
+            highestCombo = combo;
+        }
     }
 
     public void AddCombo()
     {
         combo += 1;
+        totalCombo += 1;
     }
     
     public void ResetCombo()
@@ -47,8 +55,18 @@ public class ScoreManager : MonoBehaviour
         return combo;
     }
 
+    public int ReturnHighestCombo()
+    {
+        return highestCombo;
+    }
+
     public int ReturnScore()
     {
         return score;
+    }
+
+    public int ReturnTotalCombo()
+    {
+        return totalCombo;
     }
 }

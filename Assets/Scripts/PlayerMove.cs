@@ -75,7 +75,6 @@ public class PlayerMove : MonoBehaviour
         // Health
         if(lives == 0)
         {
-            Time.timeScale = 0;
             music.SetActive(false);
         }
 
@@ -199,7 +198,7 @@ public class PlayerMove : MonoBehaviour
         {
             health -= damage;
             hitCounter += 2;
-            totalHits += 2;
+            totalHits += 1;
             scoremanager.ResetCombo();
             iFrame = true;
             if(health <= 0 && lives >= 1)
@@ -219,6 +218,7 @@ public class PlayerMove : MonoBehaviour
         {
             health -= damage;
             scoremanager.ResetCombo();
+            totalHits += 1;
             if (health <= 0 && lives >= 1)
             {
                 health = 100;
@@ -252,5 +252,10 @@ public class PlayerMove : MonoBehaviour
     public void addLife()
     {
         lives += 1;
+    }
+
+    public int ReturnHits()
+    {
+        return totalHits;
     }
 }

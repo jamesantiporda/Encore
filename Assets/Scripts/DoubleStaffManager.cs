@@ -8,10 +8,12 @@ public class DoubleStaffManager : MonoBehaviour
     // Start is called before the first frame update
     public GameObject doubleStaff;
     private BossBehavior boss;
+    private LevelManager levelManager;
 
 
     void Start()
     {
+        levelManager = GameObject.FindObjectOfType<LevelManager>();
         boss = GetComponent<BossBehavior>();
         Koreographer.Instance.RegisterForEvents("Piano", FireDoubleStaff);
     }
@@ -28,6 +30,7 @@ public class DoubleStaffManager : MonoBehaviour
         {
             // Debug.Log(koreoEvent.GetIntValue());
             Instantiate(doubleStaff, new Vector3(0f, -2.5f + (koreoEvent.GetIntValue() - 21) * (5.0f / 88), 0f), Quaternion.identity);
+            levelManager.AddToTotalProjectiles();
         }
     }
 }

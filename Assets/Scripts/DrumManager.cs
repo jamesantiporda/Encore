@@ -9,10 +9,12 @@ public class DrumManager : MonoBehaviour
     private BossBehavior boss;
     private float yPosition;
     private int count;
+    private LevelManager levelManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        levelManager = GameObject.FindObjectOfType<LevelManager>();
         count = 0;
         boss = GetComponent<BossBehavior>();
         Koreographer.Instance.RegisterForEvents("beats", FireWholeNotes);
@@ -33,6 +35,7 @@ public class DrumManager : MonoBehaviour
                 yPosition = Random.Range(-4.22f, 4.22f);
                 Instantiate(drum, new Vector3(transform.position.x, yPosition, transform.position.z), Quaternion.identity);
                 count++;
+                levelManager.AddToTotalProjectiles();
             }
             else
             {
@@ -41,6 +44,7 @@ public class DrumManager : MonoBehaviour
                     yPosition = Random.Range(-4.22f, 4.22f);
                     Instantiate(drum, new Vector3(transform.position.x, yPosition, transform.position.z), Quaternion.identity);
                     count++;
+                    levelManager.AddToTotalProjectiles();
                 }
             }
         }

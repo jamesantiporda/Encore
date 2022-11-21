@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     public GameObject musicPlayer;
     bool played;
     public GameObject endScreen;
+    int totalProjectiles;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class LevelManager : MonoBehaviour
         played = false;
         reset = false;
         totalTime = 0f;
+        totalProjectiles = 0;
     }
 
     // Update is called once per frame
@@ -45,12 +47,22 @@ public class LevelManager : MonoBehaviour
             ResetLevel();
         }
 
-        Debug.Log(totalTime);
+        //Debug.Log(totalTime);
     }
 
     public void ResetLevel()
     {
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void AddToTotalProjectiles()
+    {
+        totalProjectiles++;
+    }
+
+    public int ReturnTotalProjectiles()
+    {
+        return totalProjectiles;
     }
 }
