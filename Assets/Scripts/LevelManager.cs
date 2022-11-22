@@ -13,9 +13,14 @@ public class LevelManager : MonoBehaviour
     public GameObject endScreen;
     int totalProjectiles;
 
+    public GameObject pauseScreen;
+    private bool gameIsPaused, pause, gameEnded;
+
     // Start is called before the first frame update
     void Start()
     {
+        gameIsPaused = false;
+        pauseScreen.SetActive(gameIsPaused);
         played = false;
         reset = false;
         totalTime = 0f;
@@ -25,9 +30,10 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!musicPlayer.GetComponent<AudioSource>().isPlaying && played == true)
+        if (!musicPlayer.GetComponent<AudioSource>().isPlaying && played == true && !gameIsPaused)
         {
             endScreen.SetActive(true);
+            gameEnded = true;
         }
 
         totalTime += Time.deltaTime;
@@ -47,6 +53,17 @@ public class LevelManager : MonoBehaviour
             ResetLevel();
         }
 
+        // Pausing Level
+        pause = Input.GetKeyDown(KeyCode.Escape);
+        if(pause && !gameIsPaused && !gameEnded)
+        {
+            PauseGame();
+        }
+        else if (pause && gameIsPaused)
+        {
+            ResumeGame();
+        }
+
         //Debug.Log(totalTime);
     }
 
@@ -64,5 +81,27 @@ public class LevelManager : MonoBehaviour
     public int ReturnTotalProjectiles()
     {
         return totalProjectiles;
+    }
+
+    public void PauseGame()
+    {
+        gameIsPaused = true;
+        Time.timeScale = 0f;
+        musicPlayer.GetComponent<AudioSource>().Pause();
+        pauseScreen.SetActive(gameIsPaused);
+    }
+
+    public void ResumeGame()
+    {
+        gameIsPaused = false;
+        musicPlayer.GetComponent<AudioSource>().Play();
+        Time.timeScale = 1.0f;
+        pauseScreen.SetActive(gameIsPaused);
+    }
+
+    public void LevelSelect()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("LevelSelect");
     }
 }

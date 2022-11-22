@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class EndScreenManager : MonoBehaviour
 {
-    public TextMeshProUGUI score, combo, hits, dodged, highscore;
+    public TextMeshProUGUI score, combo, hits, dodged, highScoreText;
     public GameObject sRank, aRank, bRank, cRank, dRank, newText;
     public ScoreManager scoreManager;
     public LevelManager levelManager;
@@ -14,10 +15,14 @@ public class EndScreenManager : MonoBehaviour
 
     private float percentDodged;
 
+    private int highScore;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        highScore = PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "_highscore", 0);
+
         percentDodged = 100f - ((float) player.ReturnHits() / (float) scoreManager.ReturnTotalCombo()) * 100f;
         score.text = "SCORE: " + scoreManager.ReturnScore();
         combo.text = "HIGHEST COMBO: " + scoreManager.ReturnHighestCombo();
@@ -43,6 +48,17 @@ public class EndScreenManager : MonoBehaviour
         else
         {
             dRank.SetActive(true);
+        }
+
+        if (scoreManager.ReturnScore() > highScore)
+        {
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_highscore", scoreManager.ReturnScore());
+            highScoreText.text = "HIGHSCORE: " + scoreManager.ReturnScore();
+            newText.SetActive(true);
+        }
+        else
+        {
+            highScoreText.text = "HIGHSCORE: " + highScore;
         }
     }
 

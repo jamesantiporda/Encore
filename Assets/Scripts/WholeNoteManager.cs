@@ -32,7 +32,7 @@ public class WholeNoteManager : MonoBehaviour
         }
         else
         {
-            if(boss.ReturnCurrentAttack() != "NoteBomb" && boss.ReturnCurrentAttack() != "DoubleStaff" && boss.ReturnCurrentAttack() != "Chord")
+            if(boss.ReturnCurrentAttack() != "NoteBomb" && boss.ReturnCurrentAttack() != "DoubleStaff" && boss.ReturnCurrentAttack() != "Chord" && boss.ReturnCurrentAttack() != "FClef")
             {
                 Instantiate(wholeNote, transform.position, Quaternion.identity);
                 levelManager.AddToTotalProjectiles();
