@@ -25,6 +25,8 @@ public class NoteBombProjectile : MonoBehaviour
     bool dodged;
     NearMissScript nearMissZone;
 
+    public AudioSource explodeSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,8 @@ public class NoteBombProjectile : MonoBehaviour
         startPoint = screenPosition;
 
         StartCoroutine(waiter());
+
+        Destroy(gameObject, 2f);
     }
 
     // Update is called once per frame
@@ -53,12 +57,13 @@ public class NoteBombProjectile : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         SpawnProjectiles(numberOfProjectiles);
-        Destroy(gameObject);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
     }
 
     void SpawnProjectiles(int numberOfProjectiles)
     {
+        explodeSFX.Play();
         float angleStep = 360f / numberOfProjectiles;
         float angle = 0f;
 

@@ -24,6 +24,7 @@ public class BossBehavior : MonoBehaviour
     private NoteDrizzleBehavior noteDrizzle;
     private DrumManager drums;
     private PowerUpManager powerUpManager;
+    private AudioSource hitSFX;
     private Vector3 oldPosition;
     private Vector3 newPosition;
     private float t = 0;
@@ -33,6 +34,8 @@ public class BossBehavior : MonoBehaviour
     private float playingTime = 0.5f;
     private float lastPlayTimer = 0.0f;
     private bool playing = false;
+
+    private bool ended = false;
 
     private int randomizer;
 
@@ -56,6 +59,7 @@ public class BossBehavior : MonoBehaviour
         noteDrizzle = GameObject.FindObjectOfType<NoteDrizzleBehavior>();
         powerUpManager = GameObject.FindObjectOfType<PowerUpManager>();
         drums = GetComponent<DrumManager>();
+        hitSFX = GetComponent<AudioSource>();
 
         randomizer = 0;
         currentSegment = 0;
@@ -135,7 +139,7 @@ public class BossBehavior : MonoBehaviour
         }
 
         attackTimer = Time.time - previousAttackTime;
-        if(attackTimer >= 5.0f)
+        if(attackTimer >= 5.0f && !ended)
         {
             currentAttack = AttackPick();
         }
@@ -332,10 +336,16 @@ public class BossBehavior : MonoBehaviour
         lastPlayTimer = 0f;
     }
 
+    public void DisableBoss()
+    {
+        ended = true;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Bullet")
         {
+            hitSFX.Play();
             animator.SetTrigger("Hit");
         }
     }

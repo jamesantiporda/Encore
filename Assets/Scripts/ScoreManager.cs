@@ -9,9 +9,12 @@ public class ScoreManager : MonoBehaviour
     int score;
     int totalCombo;
 
+    private AudioSource hitSFX;
+
     // Start is called before the first frame update
     void Start()
     {
+        hitSFX = GetComponent<AudioSource>();
         combo = 0;
         score = 0;
         highestCombo = 0;
@@ -40,6 +43,7 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore()
     {
+        hitSFX.Play();
         if(combo > 1)
         {
             score += combo * 100;

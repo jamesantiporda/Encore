@@ -21,6 +21,15 @@ public class PlayerMove : MonoBehaviour
 
     public HealthBar hitBar;
 
+    public AudioSource hitSFX;
+
+    public GameObject playerDeath;
+
+    public GameObject core;
+
+    public GameObject nearMiss;
+
+
     [SerializeField]
     private int health = 100;
 
@@ -29,7 +38,7 @@ public class PlayerMove : MonoBehaviour
     float moveSpeed = 10;
 
     bool moveUp, moveDown, moveLeft, moveRight
-               , shoot, auto, parry, iFrame;
+               , shoot, auto, parry, iFrame, isAlive;
 
     public bool isInvuln;
 
@@ -48,10 +57,12 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hitSFX = GetComponent<AudioSource>();
         iFrame = false;
         lives = 1;
 
         //Initialize Health
+        isAlive = true;
         initialMaxHealth = health;
         maxHealth = health;
         healthBar.SetMaxHealth(initialMaxHealth);
@@ -73,9 +84,15 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         // Health
-        if(lives == 0)
+        if(lives == 0 && isAlive == true)
         {
+            isAlive = false;
             music.SetActive(false);
+            Instantiate(playerDeath);
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            core.SetActive(false);
+            nearMiss.SetActive(false);
         }
 
         maxHealth = initialMaxHealth - hitCounter;
@@ -90,7 +107,7 @@ public class PlayerMove : MonoBehaviour
         animator.SetBool("IsMoving", moveUp || moveDown || moveLeft || moveRight);
 
         // Gun Shooting
-        auto = Input.GetKey(KeyCode.Z);
+        auto = Input.GetKey(KeyCode.Z) && isAlive;
         gun.autoShoot = auto;
         animator.SetBool("IsShooting",auto);
 
@@ -102,7 +119,7 @@ public class PlayerMove : MonoBehaviour
         }
         */
 
-        parry = Input.GetKeyDown(KeyCode.X);
+        parry = Input.GetKeyDown(KeyCode.X) && isAlive;
 
         if(parry && parryTimer >= parryCooldown)
         {
@@ -196,6 +213,7 @@ public class PlayerMove : MonoBehaviour
     {
         if(!isInvuln)
         {
+            hitSFX.Play();
             health -= damage;
             hitCounter += 2;
             totalHits += 1;
@@ -216,6 +234,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (!isInvuln)
         {
+            hitSFX.Play();
             health -= damage;
             scoremanager.ResetCombo();
             totalHits += 1;
@@ -257,5 +276,10 @@ public class PlayerMove : MonoBehaviour
     public int ReturnHits()
     {
         return totalHits;
+    }
+
+    public bool PlayerIsAlive()
+    {
+        return isAlive;
     }
 }

@@ -33,7 +33,7 @@ public class DrumManager : MonoBehaviour
             if (boss.ReturnCurrentAttack() == "")
             {
                 yPosition = Random.Range(-4.22f, 4.22f);
-                Instantiate(drum, new Vector3(transform.position.x, yPosition, transform.position.z), Quaternion.identity);
+                Instantiate(drum, new Vector3(10f, yPosition, transform.position.z), Quaternion.identity);
                 count++;
                 levelManager.AddToTotalProjectiles();
             }
@@ -42,7 +42,7 @@ public class DrumManager : MonoBehaviour
                 if (boss.ReturnRandomizer() == 0)
                 {
                     yPosition = Random.Range(-4.22f, 4.22f);
-                    Instantiate(drum, new Vector3(transform.position.x, yPosition, transform.position.z), Quaternion.identity);
+                    Instantiate(drum, new Vector3(10f, yPosition, transform.position.z), Quaternion.identity);
                     count++;
                     levelManager.AddToTotalProjectiles();
                 }

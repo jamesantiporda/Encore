@@ -8,6 +8,7 @@ public class Shield : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     private CircleCollider2D circleCollider;
+    private AudioSource parrySFX;
 
     float parryTimer = 0;
     float parryWindow = 0.1f;
@@ -18,6 +19,7 @@ public class Shield : MonoBehaviour
         isActive = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         circleCollider = GetComponent<CircleCollider2D>();
+        parrySFX = GetComponent<AudioSource>();
         spriteRenderer.enabled = isActive;
         circleCollider.enabled = isActive;
     }
@@ -37,6 +39,7 @@ public class Shield : MonoBehaviour
 
     public void ActivateParry()
     {
+        parrySFX.Play();
         isActive = true;
         spriteRenderer.enabled = isActive;
         circleCollider.enabled = isActive;

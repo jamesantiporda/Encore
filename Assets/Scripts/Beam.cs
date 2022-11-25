@@ -21,9 +21,12 @@ public class Beam : MonoBehaviour
     bool dodged;
     NearMissScript nearMissZone;
 
+    private AudioSource sfx;
+
     // Start is called before the first frame update
     void Start()
     {
+        sfx = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         dodged = false;
         nearMissZone = GameObject.FindObjectOfType<NearMissScript>();
@@ -55,6 +58,7 @@ public class Beam : MonoBehaviour
 
     public void ShootBeam()
     {
+        //sfx.Play();
         animator.SetBool("isShooting", true);
         isActive = true;
         sprite.enabled = isActive;

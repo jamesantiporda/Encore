@@ -7,14 +7,18 @@ public class NoteDrizzleBehavior : MonoBehaviour
 {
     private GameObject noteDrizzle;
     public GameObject zone;
+    public GameObject blackBars;
     PlayerMove target;
     public GameObject noteObject;
     private string newNote;
     private BossBehavior boss;
     private LevelManager levelManager;
+    private AudioSource onSFX;
+    private bool isActive;
 
     private void Awake()
     {
+        onSFX = GetComponent<AudioSource>();
         target = GameObject.FindObjectOfType<PlayerMove>();
     }
 
@@ -25,6 +29,7 @@ public class NoteDrizzleBehavior : MonoBehaviour
         noteDrizzle = this.GetComponent<GameObject>();
         boss = GameObject.FindObjectOfType<BossBehavior>();
         Koreographer.Instance.RegisterForEvents("NoteDrizzle", FireNoteDrizzle);
+        isActive = false;
     }
 
     // Update is called once per frame
@@ -79,6 +84,8 @@ public class NoteDrizzleBehavior : MonoBehaviour
 
     public void InitializeAttack()
     {
+        isActive = true;
+        
         zone.SetActive(true);
         transform.position = new Vector3(target.transform.position.x, transform.position.y, transform.position.z);
     }
@@ -86,5 +93,18 @@ public class NoteDrizzleBehavior : MonoBehaviour
     public void DeactivateAttack()
     {
         zone.SetActive(false);
+        if (isActive == true)
+        {
+            onSFX.Play();
+            isActive = false;
+        }
+    }
+
+    public void TurnOnWithBlack()
+    {
+        onSFX.Play();
+        zone.SetActive(true);
+        blackBars.SetActive(true);
+        transform.position = new Vector3(target.transform.position.x, transform.position.y, transform.position.z);
     }
 }

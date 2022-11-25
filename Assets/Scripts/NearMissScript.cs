@@ -12,9 +12,12 @@ public class NearMissScript : MonoBehaviour
     float nearMissTimer = 0;
     float nearMissShowWindow = 0.1f;
 
+    private AudioSource sfx;
+
     // Start is called before the first frame update
     void Start()
     {
+        sfx = GetComponent<AudioSource>();
         isActive = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = isActive;
@@ -35,6 +38,7 @@ public class NearMissScript : MonoBehaviour
 
     public void ShowNearMiss()
     {
+        sfx.Play();
         isActive = true;
         spriteRenderer.enabled = isActive;
         scoreManager.AddCombo();

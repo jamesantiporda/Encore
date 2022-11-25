@@ -21,11 +21,17 @@ public class StaffBlastBehavior : MonoBehaviour
 
     private Vector3 initialPosition;
     private Vector3 finalPosition;
+    private Vector3 exitPosition;
+
+    public AudioSource beamSfx;
+
+    public StaffBeamSprite sprite;
 
     // Start is called before the first frame update
     void Start()
     {
         initialPosition = new Vector3(10, 0, 0);
+        exitPosition = new Vector3(-12.83f, 0, 0);
         transform.position = initialPosition;
         Vector3 screenPosition = Camera.main.ScreenToWorldPoint(
             new Vector3(Random.Range(0, Screen.width),
@@ -63,12 +69,17 @@ public class StaffBlastBehavior : MonoBehaviour
             Destroy(cue);
             if(beamTime >= beamTimer)
             {
-                Destroy(gameObject);
+                sprite.PlayAnimation();
             }
             else
             {
                 beamTime += Time.deltaTime;
             }
         }
+    }
+
+    public void DestroyAttack()
+    {
+        Destroy(gameObject);
     }
 }

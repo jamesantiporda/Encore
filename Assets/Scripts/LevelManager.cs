@@ -9,16 +9,24 @@ public class LevelManager : MonoBehaviour
     private bool reset, control;
     float totalTime;
     public GameObject musicPlayer;
-    bool played;
+    bool played, deathScreen;
     public GameObject endScreen;
     int totalProjectiles;
 
     public GameObject pauseScreen;
+    public GameObject UI;
+    public GameObject death;
     private bool gameIsPaused, pause, gameEnded;
+
+    private PlayerMove player;
+    public NoteDrizzleBehavior noteDrizzle;
+    public BossBehavior boss;
 
     // Start is called before the first frame update
     void Start()
     {
+        deathScreen = false;
+        player = GameObject.FindObjectOfType<PlayerMove>();
         gameIsPaused = false;
         pauseScreen.SetActive(gameIsPaused);
         played = false;
@@ -30,10 +38,21 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!musicPlayer.GetComponent<AudioSource>().isPlaying && played == true && !gameIsPaused)
+        if (!musicPlayer.GetComponent<AudioSource>().isPlaying && played == true && !gameIsPaused && player.PlayerIsAlive())
         {
+            UI.SetActive(false);
             endScreen.SetActive(true);
             gameEnded = true;
+            boss.DisableBoss();
+        }
+
+        if(!player.PlayerIsAlive() && !deathScreen)
+        {
+            UI.SetActive(false);
+            deathScreen = true;
+            noteDrizzle.TurnOnWithBlack();
+            boss.DisableBoss();
+            StartCoroutine(waiter());
         }
 
         totalTime += Time.deltaTime;
@@ -103,5 +122,12 @@ public class LevelManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         SceneManager.LoadScene("LevelSelect");
+    }
+
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(3f);
+        death.SetActive(true);
+
     }
 }
