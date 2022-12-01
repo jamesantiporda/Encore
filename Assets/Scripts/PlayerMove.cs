@@ -37,7 +37,7 @@ public class PlayerMove : MonoBehaviour
 
     private int initialMaxHealth;
 
-    float moveSpeed = 10;
+    float moveSpeed = 7.5f;
 
     bool moveUp, moveDown, moveLeft, moveRight
                , shoot, auto, parry, iFrame, isAlive;
