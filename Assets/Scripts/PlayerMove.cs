@@ -23,6 +23,8 @@ public class PlayerMove : MonoBehaviour
 
     public AudioSource hitSFX;
 
+    public AudioSource encoreSFX;
+
     public GameObject playerDeath;
 
     public GameObject core;
@@ -74,7 +76,7 @@ public class PlayerMove : MonoBehaviour
 
         //Get Music
         audioSource = music.GetComponent<AudioSource>();
-        audioSource.volume = SettingsMenu.volume;
+        //audioSource.volume = SettingsMenu.volume;
 
         gun.isActive = true;
         isInvuln = false;
@@ -107,7 +109,7 @@ public class PlayerMove : MonoBehaviour
         animator.SetBool("IsMoving", moveUp || moveDown || moveLeft || moveRight);
 
         // Gun Shooting
-        auto = Input.GetKey(KeyCode.Z) && isAlive;
+        auto = Input.GetKey(KeyCode.Z) && isAlive && audioSource.isPlaying;
         gun.autoShoot = auto;
         animator.SetBool("IsShooting",auto);
 
@@ -119,7 +121,7 @@ public class PlayerMove : MonoBehaviour
         }
         */
 
-        parry = Input.GetKeyDown(KeyCode.X) && isAlive;
+        parry = Input.GetKeyDown(KeyCode.X) && isAlive && audioSource.isPlaying;
 
         if(parry && parryTimer >= parryCooldown)
         {
@@ -270,7 +272,11 @@ public class PlayerMove : MonoBehaviour
 
     public void addLife()
     {
-        lives += 1;
+        if(lives < 2)
+        {
+            encoreSFX.Play();
+            lives += 1;
+        }
     }
 
     public int ReturnHits()

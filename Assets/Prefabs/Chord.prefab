@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -6438096907438145731}
   m_Layer: 0
   m_Name: Chord
-  m_TagString: Parry
+  m_TagString: Parryable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -18,6 +18,7 @@ public class CSVReader : MonoBehaviour
         numberOfValueRows = rows.Length - 2;
         headers = rows[0].Split(new char[] { ',' });
         numberOfColumns = headers.Length;
+        Debug.Log("Real Rows: " + rows.Length);
         Debug.Log("no of columns " + headers.Length);
         valuesRows = new float[numberOfValueRows][];
         valuesString = new string[numberOfValueRows][];

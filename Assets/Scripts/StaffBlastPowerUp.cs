@@ -9,6 +9,7 @@ public class StaffBlastPowerUp : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider;
     private ScoreManager scoremanager;
+    private AudioSource beamSFX;
     public GameObject innerBeam;
     public Animator animator;
 
@@ -22,6 +23,7 @@ public class StaffBlastPowerUp : MonoBehaviour
         scoremanager = GameObject.FindObjectOfType<ScoreManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
+        beamSFX = GetComponent<AudioSource>();
         spriteRenderer.enabled = isActive;
         boxCollider.enabled = isActive;
         innerBeam.SetActive(false);
@@ -43,6 +45,7 @@ public class StaffBlastPowerUp : MonoBehaviour
     public void ActivateStaffBlast()
     {
         isActive = true;
+        beamSFX.Play();
         spriteRenderer.enabled = isActive;
         boxCollider.enabled = isActive;
         innerBeam.SetActive(true);

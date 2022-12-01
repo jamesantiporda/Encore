@@ -17,22 +17,22 @@ public class MainMenu : MonoBehaviour
 
     public void PlayFirstLevel()
     {
-        SceneManager.LoadScene("Testing");
+        SceneManager.LoadScene("Twinkle");
     }
 
     public void PlaySecondLevel()
     {
-        SceneManager.LoadScene("Testing");
+        SceneManager.LoadScene("LaCampanella");
     }
 
     public void PlayThirdLevel()
     {
-        SceneManager.LoadScene("Testing");
+        SceneManager.LoadScene("WinterWind");
     }
 
     public void PlayFourthLevel()
     {
-        SceneManager.LoadScene("Testing");
+        SceneManager.LoadScene("Malenia");
     }
 
     public void OpenMainMenu()

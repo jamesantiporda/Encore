@@ -106,16 +106,24 @@ public class LevelManager : MonoBehaviour
     {
         gameIsPaused = true;
         Time.timeScale = 0f;
-        musicPlayer.GetComponent<AudioSource>().Pause();
+        if(played)
+        {
+            musicPlayer.GetComponent<AudioSource>().Pause();
+        }
         pauseScreen.SetActive(gameIsPaused);
+        UI.SetActive(false);
     }
 
     public void ResumeGame()
     {
         gameIsPaused = false;
-        musicPlayer.GetComponent<AudioSource>().Play();
+        if(played)
+        {
+            musicPlayer.GetComponent<AudioSource>().Play();
+        }
         Time.timeScale = 1.0f;
         pauseScreen.SetActive(gameIsPaused);
+        UI.SetActive(true);
     }
 
     public void LevelSelect()

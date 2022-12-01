@@ -8,9 +8,10 @@ public class Rest : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider;
+    private AudioSource restSFX;
 
     float powerUpTimer = 0;
-    float powerUpWindow = 0.1f;
+    float powerUpWindow = 0.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class Rest : MonoBehaviour
         isActive = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
+        restSFX = GetComponent<AudioSource>();
         spriteRenderer.enabled = isActive;
         boxCollider.enabled = isActive;
     }
@@ -40,6 +42,7 @@ public class Rest : MonoBehaviour
         isActive = true;
         spriteRenderer.enabled = isActive;
         boxCollider.enabled = isActive;
+        restSFX.Play();
     }
 
     public void DeactivateRest()
@@ -48,5 +51,6 @@ public class Rest : MonoBehaviour
         isActive = false;
         spriteRenderer.enabled = isActive;
         boxCollider.enabled = isActive;
+        restSFX.Play();
     }
 }

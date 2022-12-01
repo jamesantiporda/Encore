@@ -114,10 +114,12 @@ public class BossBehavior : MonoBehaviour
         // Add Attacks to the attack pool of each segment
         segmentAttacks = new string[segmentDurations.Length][];
 
+
+        string attackString = "";
         for (int i = 0; i < segmentDurations.Length; i++)
         {
-            segmentAttacks[i] = AttackAssignment(i, reader).Split(",");
-            segmentAttacks[i] = AttackAssignment(i, reader1).Split(",");
+            attackString = AttackAssignment(i, reader) + "," + AttackAssignment(i, reader1);
+            segmentAttacks[i] = attackString.Split(",");
         }
 
         currentAttack = AttackPick();
@@ -241,8 +243,8 @@ public class BossBehavior : MonoBehaviour
     {
         string s = "";
 
-        float uniquePitches = csv.GetValue("Number_of_Pitches", segment);
-        float range = csv.GetValue("Range", segment);
+        float uniquePitches = reader.GetValue("Number_of_Pitches", segment) + reader1.GetValue("Number_of_Pitches", segment); ;
+        float range = reader.GetValue("Range", segment) + reader1.GetValue("Range", segment);
         if (uniquePitches >= 30 && range >= 50)
         {
             if (s == "")
@@ -261,7 +263,7 @@ public class BossBehavior : MonoBehaviour
                 s += ",Chord";
         }
 
-        if (uniquePitches >= 8 && uniquePitches <= 30)
+        if (uniquePitches >= 8 && uniquePitches <= 16)
         {
             if (s == "")
                 s += "NoteDrizzle";
@@ -269,6 +271,7 @@ public class BossBehavior : MonoBehaviour
                 s += ",NoteDrizzle";
         }
 
+        
         if (chordDuration >= 1)
         {
             if (s == "")
@@ -276,6 +279,7 @@ public class BossBehavior : MonoBehaviour
             else
                 s += ",Lunge";
         }
+        
 
         float repeatedNotes = csv.GetValue("Repeated_Notes", segment);
         float staccato = csv.GetValue("Amount_of_Staccato", segment);
@@ -315,6 +319,8 @@ public class BossBehavior : MonoBehaviour
             else
                 s += ",StaffBlast";
         }
+
+        Debug.Log("Segment " + segment + ": Attacks added: " + s);
 
         return s;
     }
