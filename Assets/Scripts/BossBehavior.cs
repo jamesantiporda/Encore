@@ -263,7 +263,7 @@ public class BossBehavior : MonoBehaviour
                 s += ",Chord";
         }
 
-        if (uniquePitches >= 8 && uniquePitches <= 16)
+        if (uniquePitches >= 8 && uniquePitches <= 20)
         {
             if (s == "")
                 s += "NoteDrizzle";
@@ -271,7 +271,7 @@ public class BossBehavior : MonoBehaviour
                 s += ",NoteDrizzle";
         }
 
-        
+        /*
         if (chordDuration >= 1)
         {
             if (s == "")
@@ -279,7 +279,7 @@ public class BossBehavior : MonoBehaviour
             else
                 s += ",Lunge";
         }
-        
+        */
 
         float repeatedNotes = csv.GetValue("Repeated_Notes", segment);
         float staccato = csv.GetValue("Amount_of_Staccato", segment);
