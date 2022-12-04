@@ -12,6 +12,8 @@ public class NormalBullet : MonoBehaviour
 
     private Vector3 velocity;
 
+    public GameObject explosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,15 +40,21 @@ public class NormalBullet : MonoBehaviour
 
     public void DestroyBullet()
     {
+        Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "SmallDestroyable" || collision.tag == "Attack")
+        if (collision.tag == "SmallDestroyable")
         {
             scoremanager.AddScore();
             Destroy(gameObject);
+        }
+
+        if (collision.tag == "Attack")
+        {
+            DestroyBullet();
         }
 
         if (collision.tag == "Boss")

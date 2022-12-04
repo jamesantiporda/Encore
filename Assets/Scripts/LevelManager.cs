@@ -73,7 +73,7 @@ public class LevelManager : MonoBehaviour
         }
 
         // Pausing Level
-        pause = Input.GetKeyDown(KeyCode.Escape);
+        pause = Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P);
         if(pause && !gameIsPaused && !gameEnded)
         {
             PauseGame();
