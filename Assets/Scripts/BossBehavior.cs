@@ -335,6 +335,11 @@ public class BossBehavior : MonoBehaviour
         return randomizer;
     }
 
+    public float ReturnSongLength()
+    {
+        return songLength;
+    }
+
     void Playing(KoreographyEvent koreoEvent)
     {
         playing = true;

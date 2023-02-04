@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
 
     private bool reset, control;
-    float totalTime;
+    float totalTime, songLength;
     public GameObject musicPlayer;
     bool played, deathScreen;
     public GameObject endScreen;
@@ -32,13 +32,14 @@ public class LevelManager : MonoBehaviour
         played = false;
         reset = false;
         totalTime = 0f;
+        songLength = boss.ReturnSongLength();
         totalProjectiles = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!musicPlayer.GetComponent<AudioSource>().isPlaying && played == true && !gameIsPaused && player.PlayerIsAlive())
+        if (!musicPlayer.GetComponent<AudioSource>().isPlaying && played == true && !gameIsPaused && player.PlayerIsAlive() && totalTime >= (songLength + 5))
         {
             UI.SetActive(false);
             endScreen.SetActive(true);
