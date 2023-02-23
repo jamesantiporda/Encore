@@ -285,6 +285,10 @@ public class BossBehavior : MonoBehaviour
         float staccato = csv.GetValue("Amount_of_Staccato", segment);
         if(repeatedNotes >= 0.6 || staccato >= 0.2)
         {
+            if (staccato >= 0.2)
+            {
+                Debug.Log("STAC");
+            }
             if (s == "")
                 s += "FClef";
             else
