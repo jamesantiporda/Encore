@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class LevelManager : MonoBehaviour
 {
@@ -14,6 +16,10 @@ public class LevelManager : MonoBehaviour
     int totalProjectiles;
 
     public GameObject pauseScreen;
+    public Slider masterSlider, musicSlider, sfxSlider;
+    float masterSoundLevel, musicSoundLevel, sfxSoundLevel;
+    public AudioMixer masterMixer;
+
     public GameObject UI;
     public GameObject death;
     private bool gameIsPaused, pause, gameEnded;
@@ -34,6 +40,14 @@ public class LevelManager : MonoBehaviour
         totalTime = 0f;
         songLength = boss.ReturnSongLength();
         totalProjectiles = 0;
+
+        masterMixer.GetFloat("volume", out masterSoundLevel);
+        masterMixer.GetFloat("musicVol", out musicSoundLevel);
+        masterMixer.GetFloat("sfxVol", out sfxSoundLevel);
+
+        masterSlider.value = masterSoundLevel;
+        musicSlider.value = musicSoundLevel;
+        sfxSlider.value = sfxSoundLevel;
     }
 
     // Update is called once per frame

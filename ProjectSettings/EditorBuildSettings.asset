@@ -18,15 +18,33 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSelect.unity
     guid: bd9d42c603f9146cda81d1a2a5ebe450
   - enabled: 1
-    path: Assets/Scenes/LaCampanella.unity
+    path: Assets/Scenes/LaCampanellaOLD.unity
     guid: cf39435144bb4f24cb594e8d481cf24b
   - enabled: 1
-    path: Assets/Scenes/Twinkle.unity
+    path: Assets/Scenes/TwinkleOLD.unity
     guid: 870fd46f1b1dea1448499efc396a5f57
   - enabled: 1
     path: Assets/Scenes/WinterWind.unity
     guid: 93f3063c41945524c840f79539d0b3fc
   - enabled: 1
-    path: Assets/Scenes/Malenia.unity
+    path: Assets/Scenes/MaleniaOLD.unity
     guid: 2d602c6e08a7efe4c9e7f8d2a7566a9d
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Twinkle.unity
+    guid: e86137c908244dc4f966b6ccc72c62a1
+  - enabled: 1
+    path: Assets/Scenes/LaCampanella.unity
+    guid: c3db3b2993a6b57478d9d4017b47f115
+  - enabled: 1
+    path: Assets/Scenes/Malenia.unity
+    guid: 6b93c3cfaf2f48b4e99bca8071f9958e
   m_configObjects: {}
