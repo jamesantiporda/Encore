@@ -121,6 +121,8 @@ public class PlayerMove : MonoBehaviour
         }
         */
 
+
+        // Parrying Timing
         parry = Input.GetKeyDown(KeyCode.X) && isAlive && audioSource.isPlaying;
 
         if(parry && parryTimer >= parryCooldown)
@@ -149,6 +151,18 @@ public class PlayerMove : MonoBehaviour
                 isInvuln = iFrame;
                 iFrameTimer += Time.deltaTime;
             }
+        }
+
+        // Set Opacity of Player Sprite
+        if(auto)
+        {
+            Debug.Log("Opacity Low!");
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+        }
+        else
+        {
+            Debug.Log("Opacity Normal!");
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         }
 
     }
