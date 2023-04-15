@@ -38,13 +38,22 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Twinkle.unity
-    guid: e86137c908244dc4f966b6ccc72c62a1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/LaCampanella.unity
-    guid: c3db3b2993a6b57478d9d4017b47f115
+    guid: 123e8923cc3b3ba4e99dfd70b22b999a
   - enabled: 1
     path: Assets/Scenes/Malenia.unity
-    guid: 6b93c3cfaf2f48b4e99bca8071f9958e
+    guid: a2dd592be1c4d6e4994ab0c134a03248
+  - enabled: 1
+    path: Assets/Scenes/Twinkle.unity
+    guid: fdcca58d460b23048b9d3a39c139ba10
   m_configObjects: {}

@@ -8,6 +8,7 @@ public class NoteDrizzleBehavior : MonoBehaviour
     private GameObject noteDrizzle;
     public GameObject zone;
     public GameObject blackBars;
+    public GameObject piano;
     PlayerMove target;
     public GameObject noteObject;
     private string newNote;
@@ -87,12 +88,14 @@ public class NoteDrizzleBehavior : MonoBehaviour
         isActive = true;
         
         zone.SetActive(true);
+        piano.SetActive(true);
         transform.position = new Vector3(target.transform.position.x, transform.position.y, transform.position.z);
     }
 
     public void DeactivateAttack()
     {
         zone.SetActive(false);
+        piano.SetActive(false);
         if (isActive == true)
         {
             onSFX.Play();

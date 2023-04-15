@@ -156,12 +156,10 @@ public class PlayerMove : MonoBehaviour
         // Set Opacity of Player Sprite
         if(auto)
         {
-            Debug.Log("Opacity Low!");
             gameObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
         }
         else
         {
-            Debug.Log("Opacity Normal!");
             gameObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         }
 

@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
 
     private bool reset, control;
-    float totalTime, songLength;
+    float totalTime, songLength, deathTime;
     public GameObject musicPlayer;
     bool played, deathScreen;
     public GameObject endScreen;
@@ -23,10 +24,13 @@ public class LevelManager : MonoBehaviour
     public GameObject UI;
     public GameObject death;
     private bool gameIsPaused, pause, gameEnded;
+    public TextMeshProUGUI progressText;
 
     private PlayerMove player;
     public NoteDrizzleBehavior noteDrizzle;
     public BossBehavior boss;
+
+    public Slider progressBar;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +42,7 @@ public class LevelManager : MonoBehaviour
         played = false;
         reset = false;
         totalTime = 0f;
+        deathTime = 0f;
         songLength = boss.ReturnSongLength();
         totalProjectiles = 0;
 
@@ -67,6 +72,9 @@ public class LevelManager : MonoBehaviour
             deathScreen = true;
             noteDrizzle.TurnOnWithBlack();
             boss.DisableBoss();
+            deathTime = totalTime - 5;
+            progressBar.value = Mathf.Round((deathTime / songLength) * 100);
+            progressText.text = Mathf.Round((deathTime / songLength) * 100) + "%";
             StartCoroutine(waiter());
         }
 
