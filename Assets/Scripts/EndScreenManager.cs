@@ -25,6 +25,12 @@ public class EndScreenManager : MonoBehaviour
 
         percentDodged = 100f - ((float) player.ReturnHits() / (float) scoreManager.ReturnTotalCombo()) * 100f;
         score.text = "SCORE: " + scoreManager.ReturnScore();
+
+        if(scoreManager.ReturnScore() >= 10000000)
+        {
+            PlayerPrefs.SetInt("tenMill", 1);
+        }
+
         combo.text = "HIGHEST COMBO: " + scoreManager.ReturnHighestCombo();
         hits.text = "HIT BY: " + player.ReturnHits() + " attacks";
         dodged.text = "% DODGED: " + Math.Round(percentDodged, 2) + "%";

@@ -32,6 +32,8 @@ public class LevelManager : MonoBehaviour
 
     public Slider progressBar;
 
+    private AchievementsManager achievementsManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +55,8 @@ public class LevelManager : MonoBehaviour
         masterSlider.value = masterSoundLevel;
         musicSlider.value = musicSoundLevel;
         sfxSlider.value = sfxSoundLevel;
+
+        achievementsManager = GameObject.FindObjectOfType<AchievementsManager>();
     }
 
     // Update is called once per frame
@@ -62,8 +66,19 @@ public class LevelManager : MonoBehaviour
         {
             UI.SetActive(false);
             endScreen.SetActive(true);
+            PlayerPrefs.SetInt("finishedLevels", PlayerPrefs.GetInt("finishedLevels") + 1);
             gameEnded = true;
             boss.DisableBoss();
+
+            if(player.ReturnHits() == 0)
+            {
+                PlayerPrefs.SetInt("noHit", 1);
+            }
+
+            if(!player.ReturnUsedGun())
+            {
+                PlayerPrefs.SetInt("noShoot", 1);
+            }
         }
 
         if(!player.PlayerIsAlive() && !deathScreen)

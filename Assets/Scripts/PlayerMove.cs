@@ -56,6 +56,8 @@ public class PlayerMove : MonoBehaviour
     private int hitCounter = 0;
     private int totalHits = 0;
 
+    private bool usedGun = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -112,6 +114,11 @@ public class PlayerMove : MonoBehaviour
         auto = Input.GetKey(KeyCode.Z) && isAlive && audioSource.isPlaying;
         gun.autoShoot = auto;
         animator.SetBool("IsShooting",auto);
+
+        if(auto)
+        {
+            usedGun = true;
+        }
 
         /* shoot = Input.GetKeyDown(KeyCode.Z);
 
@@ -299,5 +306,10 @@ public class PlayerMove : MonoBehaviour
     public bool PlayerIsAlive()
     {
         return isAlive;
+    }
+
+    public bool ReturnUsedGun()
+    {
+        return usedGun;
     }
 }
