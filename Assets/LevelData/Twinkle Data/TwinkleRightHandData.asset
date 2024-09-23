@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7115b04b6f350049baaba4309879455, type: 3}
+  m_Name: TwinkleRightHandData
+  m_EditorClassIdentifier: 
+  features: {fileID: 4900000, guid: 49871a00782411f4eb4c2724a65aa5c2, type: 3}
+  headers:
+  - Number_of_Pitches
+  - Number_of_Pitch_Classes
+  - Number_of_Common_Pitches
+  - Number_of_Common_Pitch_Classes
+  - Range
+  - Mean_Pitch
+  - Repeated_Notes
+  - Chromatic_Motion
+  - Stepwise_Motion
+  - Average_Number_of_Simultaneous_Pitch_Classes
+  - Average_Number_of_Simultaneous_Pitches
+  - Vertical_Minor_Seconds
+  - Vertical_Thirds
+  - Vertical_Tritones
+  - Vertical_Perfect_Fourths
+  - Vertical_Perfect_Fifths
+  - Vertical_Sixths
+  - Vertical_Sevenths
+  - Vertical_Octaves
+  - Vertical_Minor_Third_Prevalence
+  - Vertical_Major_Third_Prevalence
+  - Chord_Duration
+  - Initial_Tempo
+  - Mean_Tempo
+  - Tempo_Variability
+  - Duration_in_Seconds
+  - Note_Density
+  - Note_Density_Variability
+  - Average_Time_Between_Attacks
+  - Average_Variability_of_Time_Between_Attacks_for_Each_Voice
+  - Minimum_Note_Duration
+  - Maximum_Note_Duration
+  - Average_Note_Duration
+  - Amount_of_Staccato
+  - Unpitched_Percussion_Instrument_Prevalence
+  - Acoustic_Guitar_Prevalence
+  - Electric_Guitar_Prevalence
+  - Violin_Prevalence
+  - Dynamic_Range
+  - "Average_Note_to_Note_Change_in_Dynamics\r"
+  numberOfValueRows: 4
+  numberOfColumns: 40

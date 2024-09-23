@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f50c24391ca45484e816a053495f4ea0, type: 3}
+  m_Name: LaCampBossBehaviorData
+  m_EditorClassIdentifier: 
+  csvDataRightHand: {fileID: 11400000, guid: 7d5918f8e82b17a46bb62b2c87a0d524, type: 2}
+  csvDataLeftHand: {fileID: 11400000, guid: 59c74be7885199347aba23a26dce46e9, type: 2}
+  segmentAttacks:
+  - ','
+  - NoteRain,FClef,NoteRain,Chord,NoteBomb
+  - NoteRain,FClef,DoubleStaff,NoteRain,Chord,FClef,NoteBomb
+  - NoteRain,FClef,NoteRain
+  - NoteRain,FClef,NoteRain,Chord,FClef,NoteBomb
+  - NoteRain,FClef,NoteRain,FClef
+  - FClef,Chord,NoteBomb
+  - NoteRain,FClef,NoteRain,Chord,FClef,NoteBomb,DoubleStaff
+  - FClef,DoubleStaff,FClef
+  - NoteRain,FClef,DoubleStaff,NoteRain,Chord,NoteBomb
+  - NoteRain,FClef,DoubleStaff,NoteRain,Chord,NoteBomb
+  - FClef,DoubleStaff,
+  - NoteDrizzle,FClef,DoubleStaff,Chord,NoteDrizzle,NoteBomb,DoubleStaff
+  - FClef,DoubleStaff,FClef
+  - NoteRain,FClef,DoubleStaff,NoteRain,Chord,NoteBomb
+  - NoteRain,FClef,DoubleStaff,NoteRain,Chord,NoteBomb
+  - NoteRain,FClef,NoteRain,FClef
+  - NoteRain,FClef,NoteRain,Chord,FClef,NoteBomb
+  - NoteRain,NoteRain,Chord,FClef,NoteBomb
+  - NoteRain,FClef,NoteRain
+  - NoteRain,NoteRain,Chord,FClef,NoteBomb
+  - NoteRain,NoteRain
+  - Chord,NoteBomb,FClef
+  - NoteDrizzle,NoteDrizzle,FClef
+  - Chord,NoteDrizzle,NoteBomb,StaffBlast,Chord,NoteDrizzle,NoteBomb,StaffBlast
+  segmentDurations:
+  - 6.361
+  - 30.21
+  - 14.92
+  - 12.97
+  - 24
+  - 12.03
+  - 5.456
+  - 11.23
+  - 3.93
+  - 9.1
+  - 20.5
+  - 6.005
+  - 11.1
+  - 6.883
+  - 17.36
+  - 4.547
+  - 10.85
+  - 10.38
+  - 6.082
+  - 6.226
+  - 11.38
+  - 3.059
+  - 11.16
+  - 1.837
+  - 3.486
+  segmentPitches:
+  - 81
+  - 72.5
+  - 72.5
+  - 77.5
+  - 77
+  - 70.5
+  - 73
+  - 72.5
+  - 83.5
+  - 83.5
+  - 76
+  - 49.5
+  - 85
+  - 79.5
+  - 70.5
+  - 71.5
+  - 72.5
+  - 69
+  - 66
+  - 58.5
+  - 70
+  - 62.5
+  - 62
+  - 74
+  - 66.5
+  powerUpSegments: 00010101000101010101010101010101010101010101010100
+  songLength: 261.062

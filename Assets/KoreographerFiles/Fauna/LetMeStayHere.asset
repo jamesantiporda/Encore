@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2076007791, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
+  m_Name: LetMeStayHere
+  m_EditorClassIdentifier: 
+  mSourceClip: {fileID: 8300000, guid: 5768808d5e244a848bdab597b10e0d2c, type: 3}
+  mAudioFilePath: 
+  mSampleRate: 44100
+  mIgnoreLatencyOffset: 0
+  mTempoSections:
+  - sectionName: New Section
+    startSample: 0
+    samplesPerBeat: 13639.175257731958
+    beatsPerMeasure: 4
+    bStartNewMeasure: 1
+  mTracks:
+  - {fileID: 11400000, guid: 4a6f3dcd240f5174198f5e34b9a3ab27, type: 2}
+  - {fileID: 11400000, guid: 6799b3c428ec89442ac0660fb2ea724c, type: 2}
+  - {fileID: 11400000, guid: b4ae17f31a176da46923ee8b84d9fe2b, type: 2}
+  - {fileID: 11400000, guid: 2a396f1712f1eb747bcefe0153f7fdef, type: 2}
+  - {fileID: 11400000, guid: f71255536b056d744a9e12f051ce2dd4, type: 2}

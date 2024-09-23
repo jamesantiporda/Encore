@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f50c24391ca45484e816a053495f4ea0, type: 3}
+  m_Name: WinterWindBossBehaviorData
+  m_EditorClassIdentifier: 
+  csvDataRightHand: {fileID: 11400000, guid: 2fe09fdfb810c9640880d014837451a9, type: 2}
+  csvDataLeftHand: {fileID: 11400000, guid: 63bc3b9e742400c45a092a5010fb953a, type: 2}
+  segmentAttacks:
+  - Chord,NoteDrizzle,NoteBomb,StaffBlast,NoteDrizzle
+  - NoteRain,FClef,NoteRain,Chord,NoteBomb,StaffBlast
+  - NoteRain,FClef,NoteRain,Chord,NoteBomb
+  - NoteRain,FClef,NoteRain,Chord,NoteBomb,StaffBlast
+  - NoteRain,FClef,NoteRain,Chord,NoteBomb
+  - NoteRain,FClef,NoteRain,Chord,NoteBomb
+  - NoteRain,FClef,NoteRain,Chord,NoteBomb,StaffBlast
+  - NoteRain,FClef,NoteRain
+  - NoteRain,FClef,NoteRain,Chord,NoteBomb
+  - NoteRain,FClef,NoteRain
+  - NoteRain,FClef,NoteRain,Chord,NoteBomb
+  - NoteRain,Chord,NoteBomb,StaffBlast,NoteRain,FClef
+  - NoteRain,Chord,NoteBomb,StaffBlast,NoteRain,FClef
+  - FClef,Chord,NoteBomb
+  - FClef,Chord,NoteBomb
+  - NoteRain,FClef,NoteRain
+  - FClef,Chord,NoteBomb
+  - NoteRain,FClef,NoteRain
+  - NoteRain,FClef,NoteRain
+  - NoteRain,FClef,NoteRain,FClef
+  - NoteRain,FClef,NoteRain,FClef
+  - NoteDrizzle,FClef,NoteDrizzle,FClef
+  - NoteRain,FClef,NoteRain,FClef,DoubleStaff
+  - NoteRain,FClef,NoteRain,Chord,NoteBomb,StaffBlast
+  - NoteRain,FClef,NoteRain,Chord,NoteBomb
+  - NoteRain,FClef,NoteRain,Chord,NoteBomb
+  - NoteRain,FClef,NoteRain,Chord,NoteBomb
+  - NoteDrizzle,FClef,NoteDrizzle
+  - NoteDrizzle,FClef,NoteDrizzle,FClef
+  - NoteRain,Chord,FClef,NoteBomb,NoteRain,FClef
+  - NoteRain,FClef,NoteRain,FClef
+  - Chord,NoteDrizzle,NoteBomb,StaffBlast,Chord,NoteDrizzle,NoteBomb,StaffBlast
+  - NoteRain,Chord,FClef,NoteBomb,DoubleStaff,NoteRain,Chord,FClef,NoteBomb,DoubleStaff
+  segmentDurations:
+  - 20
+  - 7.384
+  - 8.384
+  - 7.384
+  - 3.691
+  - 7.384
+  - 7.384
+  - 6.922
+  - 7.384
+  - 5.537
+  - 5.537
+  - 3.691
+  - 3.691
+  - 3.691
+  - 3.691
+  - 7.384
+  - 3.691
+  - 7.384
+  - 3.691
+  - 2.884
+  - 2.884
+  - 3.691
+  - 3.691
+  - 7.384
+  - 6.691
+  - 7.384
+  - 3.691
+  - 3.691
+  - 3.691
+  - 3.691
+  - 7.384
+  - 4.154
+  - 1.614
+  segmentPitches:
+  - 51
+  - 63.5
+  - 66
+  - 63.5
+  - 64.5
+  - 68.5
+  - 60
+  - 59.5
+  - 59.5
+  - 59
+  - 68.5
+  - 61
+  - 64
+  - 68
+  - 65
+  - 62
+  - 61
+  - 64
+  - 60.5
+  - 73
+  - 67
+  - 67.5
+  - 63.5
+  - 63.5
+  - 64.5
+  - 64
+  - 65.5
+  - 70.5
+  - 79
+  - 71.5
+  - 53
+  - 50
+  - 62
+  powerUpSegments: 000101010101010101010101010101010101010101010101010101010101010001
+  songLength: 186.43
