@@ -209,23 +209,6 @@ public class PlayerMove : MonoBehaviour
         }
 
         pos += move;
-
-        if (pos.x <= -8.63f)
-        {
-            pos.x = -8.63f;
-        }
-        if (pos.x >= 8.63f)
-        {
-            pos.x = 8.63f;
-        }
-        if (pos.y <= -3.04f)
-        {
-            pos.y = -3.04f;
-        }
-        if (pos.y >= 3.91f)
-        {
-            pos.y = 3.91f;
-        }
         
         transform.position = pos;
     }
