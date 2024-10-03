@@ -2035,7 +2035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &277192287
 Transform:
   m_ObjectHideFlags: 0
@@ -12877,6 +12877,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1636385953}
+    - target: {fileID: 5675433929942629578, guid: 0207ca095bee3ce498065d7bd40eea86, type: 3}
+      propertyPath: moveSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5675433929942629578, guid: 0207ca095bee3ce498065d7bd40eea86, type: 3}
       propertyPath: scoremanager
       value: 

@@ -13,6 +13,8 @@ public class PlayerMove : MonoBehaviour
 
     private AudioSource audioSource;
 
+    private Rigidbody2D rb;
+
     public ScoreManager scoremanager;
 
     public Animator animator;
@@ -37,6 +39,7 @@ public class PlayerMove : MonoBehaviour
 
     private int initialMaxHealth;
 
+    [SerializeField]
     float moveSpeed = 7.5f;
 
     bool moveUp, moveDown, moveLeft, moveRight
@@ -61,6 +64,9 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Set Rigidbody
+        rb = GetComponent<Rigidbody2D>();
+
         hitSFX = GetComponent<AudioSource>();
         iFrame = false;
         lives = 1;
@@ -175,42 +181,29 @@ public class PlayerMove : MonoBehaviour
     private void FixedUpdate()
     {
         // Movement
-        Vector2 pos = transform.position;
-
-        float moveAmount = moveSpeed * Time.fixedDeltaTime;
         Vector2 move = Vector2.zero;
 
         if (moveUp)
         {
-            move.y += moveAmount;
+            move.y += 1 * moveSpeed;
         }
 
         if (moveDown)
         {
-            move.y -= moveAmount;
+            move.y -= 1 * moveSpeed;
         }
 
         if (moveLeft)
         {
-            move.x -= moveAmount;
+            move.x -= 1 * moveSpeed;
         }
 
         if (moveRight)
         {
-            move.x += moveAmount;
+            move.x += 1 * moveSpeed;
         }
 
-        float moveMagnitude = Mathf.Sqrt(move.x * move.x + move.y * move.y);
-
-        if (moveMagnitude > moveAmount)
-        {
-            float ratio = moveAmount / moveMagnitude;
-            move *= ratio;
-        }
-
-        pos += move;
-        
-        transform.position = pos;
+        rb.velocity = move;
     }
 
     public void DecreaseHealth(int damage)
