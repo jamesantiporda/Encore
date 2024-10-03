@@ -12879,7 +12879,7 @@ PrefabInstance:
       objectReference: {fileID: 1636385953}
     - target: {fileID: 5675433929942629578, guid: 0207ca095bee3ce498065d7bd40eea86, type: 3}
       propertyPath: moveSpeed
-      value: 4
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 5675433929942629578, guid: 0207ca095bee3ce498065d7bd40eea86, type: 3}
       propertyPath: scoremanager

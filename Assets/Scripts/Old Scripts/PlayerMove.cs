@@ -185,23 +185,25 @@ public class PlayerMove : MonoBehaviour
 
         if (moveUp)
         {
-            move.y += 1 * moveSpeed;
+            move.y += 1;
         }
 
         if (moveDown)
         {
-            move.y -= 1 * moveSpeed;
+            move.y -= 1;
         }
 
         if (moveLeft)
         {
-            move.x -= 1 * moveSpeed;
+            move.x -= 1;
         }
 
         if (moveRight)
         {
-            move.x += 1 * moveSpeed;
+            move.x += 1;
         }
+
+        move = move.normalized * moveSpeed;
 
         rb.velocity = move;
     }
