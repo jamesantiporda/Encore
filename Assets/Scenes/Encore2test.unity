@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoPlayOnAwake: 0
-  koreography: {fileID: 11400000, guid: a7680d70a352d284a9b02a0342b14e34, type: 2}
+  koreography: {fileID: 11400000, guid: fb655c574bdff3e4b802fabc64f18b9b, type: 2}
   targetKoreographer: {fileID: 0}
 --- !u!82 &58991440
 AudioSource:
@@ -2649,7 +2649,7 @@ MonoBehaviour:
   encore: {fileID: 8639221777885518854, guid: 76dc6579d02f944979b30a0b457f73ca, type: 3}
   soundBarrierChance: 4
   restChance: 3
-  staffBlastChance: 2
+  staffBlastChance: 0
   encoreChance: 1
 --- !u!4 &343699488
 Transform:
@@ -3237,7 +3237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5a34e19f05be247978160eed6ebe8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data: {fileID: 11400000, guid: 607158c67f60fb647a1c519f0821e3b3, type: 2}
+  _data: {fileID: 11400000, guid: 534a2e3060aeeae4ba491c32cc9c7860, type: 2}
   speed: 1
 --- !u!114 &470674824
 MonoBehaviour:

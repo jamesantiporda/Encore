@@ -42,8 +42,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     float moveSpeed = 7.5f;
 
-    bool moveUp, moveDown, moveLeft, moveRight
-               , shoot, auto, parry, iFrame, isAlive;
+    bool shoot, auto, parry, iFrame, isAlive;
 
     public bool isInvuln;
 
@@ -60,6 +59,8 @@ public class PlayerMove : MonoBehaviour
     private int totalHits = 0;
 
     private bool usedGun = false;
+
+    private Vector2 _dir;
 
     // Start is called before the first frame update
     void Start()
@@ -108,13 +109,6 @@ public class PlayerMove : MonoBehaviour
         maxHealth = initialMaxHealth - hitCounter;
 
         hitBar.SetHealth(maxHealth);
-
-        // Movement Input
-        moveUp = Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W);
-        moveDown = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
-        moveLeft = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A);
-        moveRight = Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
-        animator.SetBool("IsMoving", moveUp || moveDown || moveLeft || moveRight);
 
         // Gun Shooting
         auto = Input.GetKey(KeyCode.Z) && isAlive && audioSource.isPlaying;
@@ -180,32 +174,7 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Movement
-        Vector2 move = Vector2.zero;
-
-        if (moveUp)
-        {
-            move.y += 1;
-        }
-
-        if (moveDown)
-        {
-            move.y -= 1;
-        }
-
-        if (moveLeft)
-        {
-            move.x -= 1;
-        }
-
-        if (moveRight)
-        {
-            move.x += 1;
-        }
-
-        move = move.normalized * moveSpeed;
-
-        rb.velocity = move;
+        
     }
 
     public void DecreaseHealth(int damage)
@@ -289,5 +258,11 @@ public class PlayerMove : MonoBehaviour
     public bool ReturnUsedGun()
     {
         return usedGun;
+    }
+
+    public void SetDirection(Vector2 dir)
+    {
+        _dir = dir.normalized;
+        rb.velocity = _dir * moveSpeed;
     }
 }
