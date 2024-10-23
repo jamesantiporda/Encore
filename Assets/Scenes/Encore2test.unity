@@ -2649,7 +2649,7 @@ MonoBehaviour:
   encore: {fileID: 8639221777885518854, guid: 76dc6579d02f944979b30a0b457f73ca, type: 3}
   soundBarrierChance: 4
   restChance: 3
-  staffBlastChance: 2
+  staffBlastChance: 0
   encoreChance: 1
 --- !u!4 &343699488
 Transform:

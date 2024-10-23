@@ -985,6 +985,8 @@ GameObject:
   - component: {fileID: 5675433929942629556}
   - component: {fileID: 5675433929942629579}
   - component: {fileID: 5675433929942629578}
+  - component: {fileID: 1501670005928420424}
+  - component: {fileID: 3128644092113908778}
   - component: {fileID: 5675433929942629558}
   - component: {fileID: 5675433929942629557}
   - component: {fileID: 5675433929942629559}
@@ -1093,7 +1095,34 @@ MonoBehaviour:
   core: {fileID: 5675433928950251300}
   nearMiss: {fileID: 5675433928526318599}
   health: 100
+  moveSpeed: 7.5
   isInvuln: 0
+--- !u!114 &1501670005928420424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5675433929942629577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361b860de3eb7f24fa63fad5a679e5df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3128644092113908778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5675433929942629577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bc183e3ee0545438a968610f9122ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputSystem: {fileID: 1501670005928420424}
+  _playerMovement: {fileID: 5675433929942629578}
 --- !u!50 &5675433929942629558
 Rigidbody2D:
   serializedVersion: 4
