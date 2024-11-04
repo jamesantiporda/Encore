@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using TMPro;
+using SonicBloom.Koreo.Players;
+using SonicBloom.Koreo;
 
+[DefaultExecutionOrder(-1)]
 public class LevelManager : MonoBehaviour
 {
 
@@ -34,11 +37,42 @@ public class LevelManager : MonoBehaviour
 
     private AchievementsManager achievementsManager;
 
+    [SerializeField] private BossBehaviorData[] bossBehaviorDatas;
+
+    [SerializeField] private GameObject[] musicPlayers;
+
+    private SimpleMusicPlayer simpleMusicPlayer;
+
+    // Set this as -1 if level set should be automatic
+    public int manualLevelSet = -1;
+
+    private void Awake()
+    {
+        int level_number = 0;
+
+        player = GameObject.FindObjectOfType<PlayerMove>();
+
+        if (manualLevelSet >= 0)
+        {
+            level_number = manualLevelSet;
+        }
+        else if(PlayerPrefs.HasKey("Level"))
+        {
+            level_number = PlayerPrefs.GetInt("Level");
+        }
+
+        musicPlayer = musicPlayers[level_number];
+        musicPlayer.SetActive(true);
+        boss.SetBossBehaviorData(bossBehaviorDatas[level_number]);
+        player.SetMusic(musicPlayer);
+
+        simpleMusicPlayer = musicPlayer.GetComponent<SimpleMusicPlayer>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         deathScreen = false;
-        player = GameObject.FindObjectOfType<PlayerMove>();
         gameIsPaused = false;
         pauseScreen.SetActive(gameIsPaused);
         played = false;

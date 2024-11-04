@@ -15,24 +15,10 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("SettingsMenu");
     }
 
-    public void PlayFirstLevel()
+    public void PlayLevel(int level)
     {
-        SceneManager.LoadScene("Twinkle");
-    }
-
-    public void PlaySecondLevel()
-    {
-        SceneManager.LoadScene("LaCampanella");
-    }
-
-    public void PlayThirdLevel()
-    {
-        SceneManager.LoadScene("WinterWind");
-    }
-
-    public void PlayFourthLevel()
-    {
-        SceneManager.LoadScene("Malenia");
+        PlayerPrefs.SetInt("Level", level);
+        SceneManager.LoadScene("Encore2test");
     }
 
     public void OpenMainMenu()

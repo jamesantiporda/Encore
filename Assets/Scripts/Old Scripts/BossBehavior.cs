@@ -241,6 +241,11 @@ public class BossBehavior : MonoBehaviour
         ended = true;
     }
 
+    public void SetBossBehaviorData(BossBehaviorData data)
+    {
+        _data = data;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Bullet")

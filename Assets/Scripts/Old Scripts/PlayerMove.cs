@@ -265,4 +265,9 @@ public class PlayerMove : MonoBehaviour
         _dir = dir.normalized;
         rb.velocity = _dir * moveSpeed;
     }
+
+    public void SetMusic(GameObject obj)
+    {
+        music = obj;
+    }
 }
