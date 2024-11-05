@@ -48,6 +48,21 @@ public class BossBehavior : MonoBehaviour
 
     float noteDensity, timeBetweenAttacks, noteDensity1, timeBetweenAttacks1;
 
+    private void Awake()
+    {
+        // Create Array of Durations of each Segment
+        segmentDurations = _data.segmentDurations;
+        songLength = 0;
+
+        if (segmentDurations.Length > 0)
+        {
+            for (int i = 0; i < segmentDurations.Length; i++)
+            {
+                songLength += segmentDurations[i];
+            }
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,10 +85,6 @@ public class BossBehavior : MonoBehaviour
         previousAttackTime = Time.time;
         previousSegmentTime = Time.time;
         attackTimer = 0f;
-
-        // Create Array of Durations of each Segment
-        segmentDurations = _data.segmentDurations;
-        songLength = 0;
 
         currentAttack = "";
         currentAttack1 = "";
