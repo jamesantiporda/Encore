@@ -391,7 +391,7 @@ RectTransform:
   - {fileID: 1858817538}
   - {fileID: 536454277}
   m_Father: {fileID: 604467202}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2329,8 +2329,8 @@ RectTransform:
   m_Children:
   - {fileID: 1081316892}
   - {fileID: 827337346}
-  - {fileID: 1558351241}
   - {fileID: 65586101}
+  - {fileID: 1558351241}
   - {fileID: 95297250}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -5334,8 +5334,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.27368164}
-  m_SizeDelta: {x: -224.2616, y: -297.6122}
+  m_AnchoredPosition: {x: -6.885071, y: -129.56049}
+  m_SizeDelta: {x: -238.0319, y: -557.2806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1190359947
 MonoBehaviour:
@@ -5361,7 +5361,9 @@ MonoBehaviour:
     Track: J\xFCrgen Knuth - https://imslp.org/ (Edited)\n\nLa Campanella (Franz
     Liszt)\nMIDI Track: Heavilon - https://musescore.com/\n\nEtude Op. 25 No. 11
     - \"Winter Wind\" (Frederic Chopin)\nMIDI Track: Bernd Krueger - http://www.piano-midi.de
-    (Edited)"
+    (Edited)\n\nSFX\nPiano - Dead Key - Single Short by eyenorth -- https://freesound.org/s/402836/
+    -- License: Attribution 4.0\r\n\r\nhihat closed.aif by ianhall -- https://freesound.org/s/13246/
+    -- License: Attribution 3."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 28001b092ccb86244a8159f9f76b139a, type: 2}
   m_sharedMaterial: {fileID: -3238513616572919727, guid: 28001b092ccb86244a8159f9f76b139a, type: 2}
@@ -5388,8 +5390,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38.7
-  m_fontSizeBase: 38.7
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5424,7 +5426,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 286.95007, z: 0, w: 0}
+  m_margin: {x: 0, y: -0.2588501, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7879,8 +7881,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.27368164}
-  m_SizeDelta: {x: -224.2616, y: -297.6122}
+  m_AnchoredPosition: {x: 0, y: 265.84363}
+  m_SizeDelta: {x: -224.26, y: -828.7521}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1930204931
 MonoBehaviour:
@@ -7909,10 +7911,7 @@ MonoBehaviour:
     freesound.org
 
 
-    Made using Unity
-
-
-'
+    Made using Unity'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 28001b092ccb86244a8159f9f76b139a, type: 2}
   m_sharedMaterial: {fileID: -3238513616572919727, guid: 28001b092ccb86244a8159f9f76b139a, type: 2}
@@ -7939,8 +7938,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.11
-  m_fontSizeBase: 41.11
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7975,7 +7974,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0.000030517578}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8741,7 +8740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4693376969802993670, guid: 35de362db9dbef94f8549d39982187b7, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4693376969802993670, guid: 35de362db9dbef94f8549d39982187b7, type: 3}
       propertyPath: m_AnchorMax.x
